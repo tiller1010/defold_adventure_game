@@ -14,7 +14,11 @@ key_trigger {
   input: KEY_D
   action: "Right"
 }
+key_trigger {
+  input: KEY_SPACE
+  action: "Jump"
+}
 mouse_trigger {
-  input: MOUSE_BUTTON_1
-  action: "touch"
+  input: MOUSE_BUTTON_LEFT
+  action: "Attack"
 }
