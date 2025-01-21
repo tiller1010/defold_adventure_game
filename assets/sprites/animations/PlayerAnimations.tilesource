@@ -73,28 +73,28 @@ animations {
   start_tile: 25
   end_tile: 30
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 12
+  fps: 9
 }
 animations {
   id: "walk north"
   start_tile: 31
   end_tile: 36
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 12
+  fps: 9
 }
 animations {
   id: "walk south"
   start_tile: 19
   end_tile: 24
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 12
+  fps: 9
 }
 animations {
   id: "walk west"
   start_tile: 25
   end_tile: 30
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 12
+  fps: 9
   flip_horizontal: 1
 }
 extrude_borders: 2
