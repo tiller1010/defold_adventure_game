@@ -8,12 +8,6 @@ animations {
   fps: 12
 }
 animations {
-  id: "attack north"
-  start_tile: 49
-  end_tile: 52
-  fps: 12
-}
-animations {
   id: "attack south"
   start_tile: 37
   end_tile: 40
@@ -25,6 +19,12 @@ animations {
   end_tile: 46
   fps: 12
   flip_horizontal: 1
+}
+animations {
+  id: "attack_north"
+  start_tile: 49
+  end_tile: 52
+  fps: 12
 }
 animations {
   id: "death animation east"
@@ -40,24 +40,16 @@ animations {
   flip_horizontal: 1
 }
 animations {
-  id: "idle north"
-  start_tile: 13
-  end_tile: 18
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 12
-}
-animations {
-  id: "idle west"
-  start_tile: 7
-  end_tile: 13
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 12
-  flip_horizontal: 1
-}
-animations {
   id: "idle_east"
   start_tile: 7
   end_tile: 12
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+animations {
+  id: "idle_north"
+  start_tile: 13
+  end_tile: 18
   playback: PLAYBACK_LOOP_FORWARD
   fps: 12
 }
@@ -67,6 +59,14 @@ animations {
   end_tile: 6
   playback: PLAYBACK_LOOP_FORWARD
   fps: 12
+}
+animations {
+  id: "idle_west"
+  start_tile: 7
+  end_tile: 12
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+  flip_horizontal: 1
 }
 animations {
   id: "walk_east"
