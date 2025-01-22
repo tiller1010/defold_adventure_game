@@ -16,9 +16,5 @@ key_trigger {
 }
 key_trigger {
   input: KEY_SPACE
-  action: "Jump"
-}
-mouse_trigger {
-  input: MOUSE_BUTTON_LEFT
   action: "Attack"
 }
