@@ -16,7 +16,7 @@ input_method = HiddenInputField
 scale_mode = stretch
 
 [project]
-title = My Project
+title = Bangin
 
 [graphics]
 default_texture_min_filter = nearest
