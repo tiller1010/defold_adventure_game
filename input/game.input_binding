@@ -18,3 +18,7 @@ key_trigger {
   input: KEY_Z
   action: "Attack"
 }
+key_trigger {
+  input: KEY_X
+  action: "Interact"
+}
