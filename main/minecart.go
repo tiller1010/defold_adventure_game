@@ -34,7 +34,7 @@ embedded_components {
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/assets/sprites/animations/placeholder.tilesource\"\n"
+  "  texture: \"/main/minecart.tilesource\"\n"
   "}\n"
   ""
 }

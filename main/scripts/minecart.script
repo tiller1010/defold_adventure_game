@@ -1,4 +1,5 @@
 function init(self)
+  msg.post("#", "acquire_input_focus")
   self.player_can_interact = false
 end
 
@@ -28,19 +29,18 @@ function on_message(self, message_id, message, sender)
   and message.other_id == hash("/player") then
     self.player_can_interact = true
     print("Player can interact with minecart")
+  elseif message_id == hash("collision_response_end")
+  and message.other_id == hash("/player") then
+    self.player_can_interact = false
+    print("Player can no longer interact with minecart")
   end
 end
 
 function on_input(self, action_id, action)
-	-- Add input-handling code here. The game object this script is attached to
-	-- must have acquired input focus:
-	--
-	--    msg.post(".", "acquire_input_focus")
-	--
-	-- All mapped input bindings will be received. Mouse and touch input will
-	-- be received regardless of where on the screen it happened.
-	-- Learn more: https://defold.com/manuals/input/
-	-- Remove this function if not needed
+  if action_id == hash("Interact") and action.released and self.player_can_interact then
+    print("Player pressed interact")
+    msg.post("/player", "interact_with_minecart")
+  end
 end
 
 function on_reload(self)
