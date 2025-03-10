@@ -2,6 +2,8 @@ function init(self)
   msg.post("#", "acquire_input_focus")
   self.direction = "south"
   self.input = vmath.vector3()
+
+  sprite.set_constant('#minecart', 'tint', vmath.vector4(1, 1, 1, 0))
   self.in_minecart = false
 end
 
@@ -14,7 +16,16 @@ function update(self, dt)
     local position = go.get_position()
     local movement = self.input * 150 * dt
     if not self.animating_walk or self.direction ~= compass_direction then
-      sprite.play_flipbook("#sprite", "walk_" .. compass_direction)
+
+      local spriteHash = '#sprite'
+      local animation_prefix = 'walk_'
+
+      if self.in_minecart then
+        spriteHash = '#minecart'
+        animation_prefix = 'minecart_'
+      end
+
+      sprite.play_flipbook(spriteHash, animation_prefix .. compass_direction)
       self.animating_walk = true
     end
     go.set_position(position + movement)
@@ -91,11 +102,17 @@ function on_message(self, message_id, message, sender)
     if not self.in_minecart then
       self.in_minecart = true
       print("player entered minecart")
-      sprite.play_flipbook("#minecart", self.direction)
+      sprite.play_flipbook("#minecart", 'minecart_' .. self.direction)
+
+      sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 1, 0))
+      sprite.set_constant('#minecart', 'tint', vmath.vector4(1, 1, 1, 1))
     else
       self.in_minecart = false
       print("player exited minecart")
       sprite.play_flipbook("#sprite", "idle_" .. self.direction)
+
+      sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 1, 1))
+      sprite.set_constant('#minecart', 'tint', vmath.vector4(1, 1, 1, 0))
     end
   end
 end

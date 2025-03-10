@@ -8,28 +8,28 @@ animations {
   end_tile: 1
 }
 animations {
-  id: "east"
+  id: "minecart_east"
   start_tile: 2
   end_tile: 3
   playback: PLAYBACK_LOOP_FORWARD
   fps: 4
 }
 animations {
-  id: "north"
+  id: "minecart_north"
   start_tile: 6
   end_tile: 7
   playback: PLAYBACK_LOOP_FORWARD
   fps: 4
 }
 animations {
-  id: "south"
+  id: "minecart_south"
   start_tile: 4
   end_tile: 5
   playback: PLAYBACK_LOOP_FORWARD
   fps: 4
 }
 animations {
-  id: "west"
+  id: "minecart_west"
   start_tile: 2
   end_tile: 3
   playback: PLAYBACK_LOOP_FORWARD

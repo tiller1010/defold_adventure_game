@@ -14,7 +14,7 @@ input_method = HiddenInputField
 scale_mode = stretch
 
 [project]
-title = Bangin
+title = Adventure Game
 
 [graphics]
 default_texture_min_filter = nearest
