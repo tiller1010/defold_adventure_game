@@ -3,7 +3,7 @@ function init(self)
   self.direction = "south"
   self.input = vmath.vector3()
 
-  sprite.set_constant('#minecart', 'tint', vmath.vector4(1, 1, 1, 0))
+  sprite.set_constant('#player_in_minecart', 'tint', vmath.vector4(1, 1, 1, 0))
   self.in_minecart = false
 end
 
@@ -21,14 +21,19 @@ function update(self, dt)
       local animation_prefix = 'walk_'
 
       if self.in_minecart then
-        spriteHash = '#minecart'
+        spriteHash = '#player_in_minecart'
         animation_prefix = 'minecart_'
       end
 
       sprite.play_flipbook(spriteHash, animation_prefix .. compass_direction)
       self.animating_walk = true
     end
+
     go.set_position(position + movement)
+    if self.in_minecart then
+      go.set_position(go.get_position(), 'minecart')
+    end
+
     self.direction = compass_direction
     self.input = vmath.vector3()
   end
@@ -102,17 +107,25 @@ function on_message(self, message_id, message, sender)
     if not self.in_minecart then
       self.in_minecart = true
       print("player entered minecart")
-      sprite.play_flipbook("#minecart", 'minecart_' .. self.direction)
+      sprite.play_flipbook("#player_in_minecart", 'minecart_' .. self.direction)
 
+      -- Set player default sprite to transparent, show player minecart sprite
       sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 1, 0))
-      sprite.set_constant('#minecart', 'tint', vmath.vector4(1, 1, 1, 1))
+      sprite.set_constant('#player_in_minecart', 'tint', vmath.vector4(1, 1, 1, 1))
+
+      -- Minecart game object
+      sprite.set_constant('/minecart#minecart_sprite', 'tint', vmath.vector4(1, 1, 1, 0))
     else
       self.in_minecart = false
       print("player exited minecart")
       sprite.play_flipbook("#sprite", "idle_" .. self.direction)
 
+      -- Set player default sprite to visible, hide player minecart sprite
       sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 1, 1))
-      sprite.set_constant('#minecart', 'tint', vmath.vector4(1, 1, 1, 0))
+      sprite.set_constant('#player_in_minecart', 'tint', vmath.vector4(1, 1, 1, 0))
+
+      -- Minecart game object
+      sprite.set_constant('/minecart#minecart_sprite', 'tint', vmath.vector4(1, 1, 1, 1))
     end
   end
 end

@@ -28,7 +28,7 @@ embedded_components {
   ""
 }
 embedded_components {
-  id: "sprite"
+  id: "minecart_sprite"
   type: "sprite"
   data: "default_animation: \"anim\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
