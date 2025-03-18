@@ -3,7 +3,7 @@ function init(self)
   self.direction = "south"
   self.input = vmath.vector3()
 
-  sprite.set_constant('#player_in_minecart', 'tint', vmath.vector4(1, 1, 1, 0))
+  sprite.set_constant('/player#player_in_minecart', 'tint', vmath.vector4(1, 1, 1, 0))
   self.in_minecart = false
 end
 
@@ -107,7 +107,7 @@ function on_message(self, message_id, message, sender)
     if not self.in_minecart then
       self.in_minecart = true
       print("player entered minecart")
-      sprite.play_flipbook("#player_in_minecart", 'minecart_' .. self.direction)
+      sprite.play_flipbook("/player#player_in_minecart", 'minecart_' .. self.direction)
 
       -- Set player default sprite to transparent, show player minecart sprite
       sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 1, 0))

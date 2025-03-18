@@ -6,6 +6,11 @@ instances {
     x: 727.0
     y: 316.0
   }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
 }
 scale_along_z: 0
 embedded_instances {
@@ -52,7 +57,7 @@ embedded_instances {
   "\"\n"
   "}\n"
   "embedded_components {\n"
-  "  id: \"minecart\"\n"
+  "  id: \"player_in_minecart\"\n"
   "  type: \"sprite\"\n"
   "  data: \"default_animation: \\\"anim\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
