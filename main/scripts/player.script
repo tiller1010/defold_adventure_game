@@ -116,8 +116,27 @@ end
 
 function on_message(self, message_id, message, sender)
   if message.other_group == hash("track_trigger") then
+    -- Save center of closest track. Will be recentered once the cart is entered
+    local track_position = go.get_position(message.other_id)
+    local center_of_track = vmath.vector3(math.floor(track_position.x / 16) * 16 + 8, math.floor(track_position.y / 16) * 16 + 8, 1)
+    local distance_to_center_of_track = vmath.length(center_of_track - go.get_position())
+
+    local previous_closest_track_distance = math.huge
+    if self.closest_track then
+      local previous_track_position = go.get_position(self.closest_track)
+      local previous_center_of_track = vmath.vector3(math.floor(previous_track_position.x / 16) * 16 + 8, math.floor(previous_track_position.y / 16) * 16 + 8, 1)
+      previous_closest_track_distance = vmath.length(previous_center_of_track - go.get_position())
+    end
+
+    if not self.closest_track or distance_to_center_of_track < previous_closest_track_distance then
+      self.closest_track = message.other_id
+      self.closest_track_position = center_of_track
+    end
+    -- End find center of closest track
+    
     local can_go_in_direction = message_id == hash("collision_response")
     local track_in_direction = sender.fragment
+
     if hash(track_in_direction) == hash("track_trigger_north") then
       self.minecart_can_go_north = can_go_in_direction
     elseif hash(track_in_direction) == hash("track_trigger_south") then
@@ -129,11 +148,14 @@ function on_message(self, message_id, message, sender)
     end
   end
   
-  -- print(sender)
   if message_id == hash("interact_with_minecart") then
     if not self.in_minecart then
       self.in_minecart = true
       -- print("player entered minecart")
+
+      -- Move player to center of nearest track
+      go.set_position(self.closest_track_position)
+
       sprite.play_flipbook("/player#player_in_minecart", 'minecart_' .. self.direction)
 
       -- Set player default sprite to transparent, show player minecart sprite

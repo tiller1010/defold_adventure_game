@@ -3,8 +3,8 @@ instances {
   id: "minecart"
   prototype: "/main/minecart.go"
   position {
-    x: 775.0
-    y: 296.0
+    x: 504.0
+    y: 303.0
     z: 0.5
   }
   scale3 {
@@ -15,7 +15,7 @@ instances {
 }
 instances {
   id: "track"
-  prototype: "/main/track.go"
+  prototype: "/main/tracks/track_vertical.go"
   position {
     x: 491.0
     y: 269.0
@@ -25,50 +25,50 @@ instances {
     w: 0.70710677
   }
   scale3 {
-    x: 3.0
-    y: 3.0
-    z: 3.0
+    x: 2.0
+    y: 2.0
+    z: 2.0
   }
 }
 instances {
   id: "track1"
-  prototype: "/main/track.go"
+  prototype: "/main/tracks/track_turn.go"
   position {
-    x: 360.0
-    y: 268.0
+    x: 411.0
+    y: 269.0
   }
   rotation {
     z: 0.70710677
     w: 0.70710677
   }
   scale3 {
-    x: 3.0
-    y: 3.0
-    z: 3.0
+    x: 2.0
+    y: 2.0
+    z: 2.0
   }
 }
 instances {
   id: "track2"
-  prototype: "/main/track.go"
+  prototype: "/main/tracks/track_vertical.go"
   position {
-    x: 623.0
-    y: 268.0
+    x: 573.0
+    y: 269.0
   }
   rotation {
     z: 0.70710677
     w: 0.70710677
   }
   scale3 {
-    x: 3.0
-    y: 3.0
-    z: 3.0
+    x: 2.0
+    y: 2.0
+    z: 2.0
   }
 }
 instances {
   id: "track3"
-  prototype: "/main/track.go"
+  prototype: "/main/tracks/track_vertical.go"
   position {
-    x: 754.0
+    x: 649.0
     y: 268.0
   }
   rotation {
@@ -76,9 +76,35 @@ instances {
     w: 0.70710677
   }
   scale3 {
-    x: 3.0
-    y: 3.0
-    z: 3.0
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track4"
+  prototype: "/main/tracks/track_vertical.go"
+  position {
+    x: 399.0
+    y: 186.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track5"
+  prototype: "/main/tracks/track_vertical.go"
+  position {
+    x: 399.0
+    y: 102.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
   }
 }
 scale_along_z: 0
@@ -149,15 +175,16 @@ embedded_instances {
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
-  "      y: 12.25\\n"
+  "      x: -0.25\\n"
+  "      y: 5.75\\n"
   "    }\\n"
   "    rotation {\\n"
   "    }\\n"
   "    index: 0\\n"
   "    count: 3\\n"
   "  }\\n"
-  "  data: 10.0\\n"
-  "  data: 10.0\\n"
+  "  data: 2.630067\\n"
+  "  data: 2.5649965\\n"
   "  data: 10.0\\n"
   "}\\n"
   "\"\n"
@@ -175,16 +202,16 @@ embedded_instances {
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
-  "      x: -21.0\\n"
-  "      y: -8.5\\n"
+  "      x: -14.75\\n"
+  "      y: -8.25\\n"
   "    }\\n"
   "    rotation {\\n"
   "    }\\n"
   "    index: 0\\n"
   "    count: 3\\n"
   "  }\\n"
-  "  data: 10.0\\n"
-  "  data: 10.0\\n"
+  "  data: 2.6293006\\n"
+  "  data: 2.971224\\n"
   "  data: 10.0\\n"
   "}\\n"
   "\"\n"
@@ -202,16 +229,16 @@ embedded_instances {
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
-  "      x: 21.75\\n"
-  "      y: -8.5\\n"
+  "      x: 15.5\\n"
+  "      y: -7.75\\n"
   "    }\\n"
   "    rotation {\\n"
   "    }\\n"
   "    index: 0\\n"
   "    count: 3\\n"
   "  }\\n"
-  "  data: 10.0\\n"
-  "  data: 10.0\\n"
+  "  data: 2.694566\\n"
+  "  data: 2.835005\\n"
   "  data: 10.0\\n"
   "}\\n"
   "\"\n"
@@ -229,24 +256,24 @@ embedded_instances {
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
-  "      x: 0.25\\n"
-  "      y: -28.25\\n"
+  "      x: 0.5\\n"
+  "      y: -22.5\\n"
   "    }\\n"
   "    rotation {\\n"
   "    }\\n"
   "    index: 0\\n"
   "    count: 3\\n"
   "  }\\n"
-  "  data: 10.0\\n"
-  "  data: 10.0\\n"
+  "  data: 3.3053474\\n"
+  "  data: 3.0719514\\n"
   "  data: 10.0\\n"
   "}\\n"
   "\"\n"
   "}\n"
   ""
   position {
-    x: 599.0
-    y: 299.0
+    x: 761.0
+    y: 314.0
     z: 1.0
   }
   scale3 {

@@ -1,6 +1,6 @@
 components {
   id: "track"
-  component: "/main/track.script"
+  component: "/main/tracks/track.script"
 }
 embedded_components {
   id: "track_sprite"
@@ -9,7 +9,7 @@ embedded_components {
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/main/tracks.tilesource\"\n"
+  "  texture: \"/main/tracks/tracks.tilesource\"\n"
   "}\n"
   ""
 }
