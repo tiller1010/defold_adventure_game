@@ -19,7 +19,8 @@ function update(self, dt)
 
   local function player_move(compass_direction)
     local position = go.get_position()
-    local movement = self.input * 150 * dt
+    local player_speed = self.in_minecart and 300 or 150
+    local movement = self.input * player_speed * dt
     if not self.animating_walk or self.direction ~= compass_direction then
 
       local spriteHash = '#sprite'
@@ -118,13 +119,13 @@ function on_message(self, message_id, message, sender)
   if message.other_group == hash("track_trigger") then
     -- Save center of closest track. Will be recentered once the cart is entered
     local track_position = go.get_position(message.other_id)
-    local center_of_track = vmath.vector3(math.floor(track_position.x / 16) * 16 + 8, math.floor(track_position.y / 16) * 16 + 8, 1)
+    local center_of_track = vmath.vector3(math.floor(track_position.x) + 10, math.floor(track_position.y) + 40, 1)
     local distance_to_center_of_track = vmath.length(center_of_track - go.get_position())
 
     local previous_closest_track_distance = math.huge
     if self.closest_track then
       local previous_track_position = go.get_position(self.closest_track)
-      local previous_center_of_track = vmath.vector3(math.floor(previous_track_position.x / 16) * 16 + 8, math.floor(previous_track_position.y / 16) * 16 + 8, 1)
+      local previous_center_of_track = vmath.vector3(math.floor(previous_track_position.x) + 10, math.floor(previous_track_position.y) + 40, 1)
       previous_closest_track_distance = vmath.length(previous_center_of_track - go.get_position())
     end
 
