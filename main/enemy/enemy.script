@@ -1,0 +1,179 @@
+function init(self)
+	self.movement_vector = vmath.vector3()
+	
+	self.can_go_north = false
+	self.can_go_south = false
+	self.can_go_east = false
+	self.can_go_west = false
+
+	self.north_tracks = {}
+	self.south_tracks = {}
+	self.east_tracks = {}
+	self.west_tracks = {}
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	local function enemy_move(compass_direction)
+		local position = go.get_position()
+		local enemy_speed = 200
+		local movement = self.movement_vector * enemy_speed * dt
+		if self.direction ~= compass_direction then
+
+			local spriteHash = '#sprite'
+			local animation_prefix = 'move_'
+
+			sprite.play_flipbook(spriteHash, animation_prefix .. compass_direction)
+		end
+
+		go.set_position(position + movement)
+
+		self.direction = compass_direction
+	end
+		
+	if self.movement_vector.x > 0 then
+		enemy_move("east")
+	elseif self.movement_vector.x < 0 then
+		enemy_move("west")
+	elseif self.movement_vector.y > 0 then
+		enemy_move("north")
+	elseif self.movement_vector.y < 0 then
+		enemy_move("south")
+	end
+end
+
+function dumpTable(tbl, indent)
+	indent = indent or 0
+	for k, v in pairs(tbl) do
+		print(string.rep(" ", indent) .. tostring(k) .. ":")
+		if type(v) == "table" then
+			dumpTable(v, indent + 2)
+		else
+			print(string.rep(" ", indent + 2) .. tostring(v))
+		end
+	end
+end
+
+function table_has_value(table)
+	for _, _ in pairs(table) do
+		return true
+	end
+	return false
+end
+
+function table_value_count(table)
+	local count = 0
+	for _, _ in pairs(table) do
+		count = count + 1
+	end
+	return count
+end
+
+function on_message(self, message_id, message, sender)	
+	local can_go_in_direction = message_id == hash("collision_response")
+	local track_in_direction = sender.fragment
+
+-- dumpTable(self.west_tracks)
+
+	if message_id == hash("trigger_response") then
+		for _, direction in pairs({ "north", "south", "east", "west" }) do
+
+			-- Prevent enemy from immediately turning around after taking a turn,
+			-- since the opposite direction would then become available after traversing a single tile
+			local already_moving_along_axis = false
+			if ((direction == "east" or direction == "west") and self.going_horizontal)
+			or ((direction == "north" or direction == "south") and self.going_vertical) then
+				already_moving_along_axis = true
+			end
+				
+			if hash(track_in_direction) == hash("track_trigger_" .. direction) then
+				if message.enter then
+					if not table_has_value(self[direction .. "_tracks"])
+					and not already_moving_along_axis then
+						self.new_directions = true
+					end
+					self[direction .. "_tracks"][message.other_id] = true
+					self["can_go_" .. direction] = true
+				else
+					if table_value_count(self[direction .. "_tracks"]) == 1 then
+						self.new_directions = true
+					end
+					self[direction .. "_tracks"][message.other_id] = nil
+					if not table_has_value(self[direction .. "_tracks"]) then
+						self["can_go_" .. direction] = false
+					end
+				end
+			end
+		end
+  end
+
+	if self.new_directions then
+		self.new_directions = false
+
+		self.going_horizontal = self.can_go_east or self.can_go_west
+		self.going_vertical = self.can_go_north or self.can_go_south
+
+		if self.going_horizontal and self.going_vertical then
+			if math.random(2) == 1 then
+				self.going_horizontal = false
+			else
+				self.going_vertical = false
+			end
+		end
+
+		if self.going_horizontal then
+			if self.can_go_east and self.can_go_west then
+				self.movement_vector.x = math.random(2) == 1 and 1 or -1
+			elseif self.can_go_east then
+				self.movement_vector.x = 1
+			elseif self.can_go_west then
+				self.movement_vector.x = -1
+			end
+		else
+			self.movement_vector.x = 0
+		end
+
+		if self.going_vertical then
+			if self.can_go_north and self.can_go_south then
+				self.movement_vector.y = math.random(2) == 1 and 1 or -1
+			elseif self.can_go_north then
+				self.movement_vector.y = 1
+			elseif self.can_go_south then
+				self.movement_vector.y = -1
+			end
+		else
+			self.movement_vector.y = 0
+		end
+		
+	end
+	
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here. The game object this script is attached to
+	-- must have acquired input focus:
+	--
+	--		msg.post(".", "acquire_input_focus")
+	--
+	-- All mapped input bindings will be received. Mouse and touch input will
+	-- be received regardless of where on the screen it happened.
+	-- Learn more: https://defold.com/manuals/input/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end
