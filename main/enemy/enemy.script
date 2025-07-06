@@ -80,11 +80,9 @@ function table_value_count(table)
 	return count
 end
 
-function on_message(self, message_id, message, sender)	
+function update_movement_properties(self, message_id, message, sender)
 	local can_go_in_direction = message_id == hash("collision_response")
 	local track_in_direction = sender.fragment
-
--- dumpTable(self.west_tracks)
 
 	if message_id == hash("trigger_response") then
 		for _, direction in pairs({ "north", "south", "east", "west" }) do
@@ -96,7 +94,7 @@ function on_message(self, message_id, message, sender)
 			or ((direction == "north" or direction == "south") and self.going_vertical) then
 				already_moving_along_axis = true
 			end
-				
+
 			if hash(track_in_direction) == hash("track_trigger_" .. direction) then
 				if message.enter then
 					if not table_has_value(self[direction .. "_tracks"])
@@ -116,7 +114,7 @@ function on_message(self, message_id, message, sender)
 				end
 			end
 		end
-  end
+	end
 
 	if self.new_directions then
 		self.new_directions = false
@@ -155,7 +153,15 @@ function on_message(self, message_id, message, sender)
 		else
 			self.movement_vector.y = 0
 		end
-		
+
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message.other_group == hash("track_trigger") then
+		update_movement_properties(self, message_id, message, sender)
+	elseif message.other_group == hash("player") then
+		msg.post("player", "damage", { damage = 25 })
 	end
 	
 end

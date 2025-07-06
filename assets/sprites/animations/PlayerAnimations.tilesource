@@ -27,13 +27,13 @@ animations {
   flip_horizontal: 1
 }
 animations {
-  id: "death animation east"
+  id: "death_east"
   start_tile: 55
   end_tile: 57
   fps: 3
 }
 animations {
-  id: "death animation west"
+  id: "death_west"
   start_tile: 55
   end_tile: 57
   fps: 3

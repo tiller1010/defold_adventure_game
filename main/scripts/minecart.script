@@ -1,6 +1,6 @@
 function init(self)
-  msg.post("#", "acquire_input_focus")
-  self.player_can_interact = false
+	msg.post("#", "acquire_input_focus")
+	self.player_can_interact = false
 end
 
 function final(self)
@@ -25,25 +25,25 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-  if message.other_id == hash("/player")
-  and message_id == hash("trigger_response") then
-    if message.enter then
-      self.player_can_interact = true
-      -- print("Player can interact with minecart")
+	if message.other_id == hash("/player")
+	and message_id == hash("trigger_response") then
+		if message.enter then
+			self.player_can_interact = true
+			-- print("Player can interact with minecart")
 
-    else
-      self.player_can_interact = false
-      -- print("Player can no longer interact with minecart")
-    end
-  end
+		else
+			self.player_can_interact = false
+			-- print("Player can no longer interact with minecart")
+		end
+	end
 
 end
 
 function on_input(self, action_id, action)
-  if action_id == hash("Interact") and action.released and self.player_can_interact then
-    -- print("Player pressed interact")
-    msg.post("/player", "interact_with_minecart")
-  end
+	if action_id == hash("Interact") and action.released and self.player_can_interact then
+		-- print("Player pressed interact")
+		msg.post("/player", "interact_with_minecart")
+	end
 end
 
 function on_reload(self)

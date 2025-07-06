@@ -411,7 +411,7 @@ embedded_instances {
   "mass: 0.0\\n"
   "friction: 0.1\\n"
   "restitution: 0.5\\n"
-  "group: \\\"default\\\"\\n"
+  "group: \\\"player\\\"\\n"
   "mask: \\\"default\\\"\\n"
   "embedded_collision_shape {\\n"
   "  shapes {\\n"
@@ -549,8 +549,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 848.0
-    y: 266.0
+    x: 571.0
+    y: 212.0
     z: 1.0
   }
   scale3 {
