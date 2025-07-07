@@ -10,6 +10,8 @@ function init(self)
 	self.south_tracks = {}
 	self.east_tracks = {}
 	self.west_tracks = {}
+
+	self.frozen = false
 end
 
 function final(self)
@@ -41,26 +43,16 @@ function fixed_update(self, dt)
 
 		self.direction = compass_direction
 	end
-		
-	if self.movement_vector.x > 0 then
-		enemy_move("east")
-	elseif self.movement_vector.x < 0 then
-		enemy_move("west")
-	elseif self.movement_vector.y > 0 then
-		enemy_move("north")
-	elseif self.movement_vector.y < 0 then
-		enemy_move("south")
-	end
-end
 
-function dumpTable(tbl, indent)
-	indent = indent or 0
-	for k, v in pairs(tbl) do
-		print(string.rep(" ", indent) .. tostring(k) .. ":")
-		if type(v) == "table" then
-			dumpTable(v, indent + 2)
-		else
-			print(string.rep(" ", indent + 2) .. tostring(v))
+	if not self.frozen then
+		if self.movement_vector.x > 0 then
+			enemy_move("east")
+		elseif self.movement_vector.x < 0 then
+			enemy_move("west")
+		elseif self.movement_vector.y > 0 then
+			enemy_move("north")
+		elseif self.movement_vector.y < 0 then
+			enemy_move("south")
 		end
 	end
 end
@@ -162,6 +154,15 @@ function on_message(self, message_id, message, sender)
 		update_movement_properties(self, message_id, message, sender)
 	elseif message.other_group == hash("player") then
 		msg.post("player", "damage", { damage = 25 })
+	elseif message_id == hash('freeze') then
+		self.frozen = true
+		-- Set blue tint
+		sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 2, 1))
+		timer.delay(3, false, function () 
+			self.frozen = false
+			-- Remove blue tint
+			sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 1, 1))
+		end)
 	end
 	
 end

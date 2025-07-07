@@ -1,7 +1,22 @@
+local function get_direction_integer(direction_string)
+  if direction_string == 'north' then
+    return 1
+  elseif direction_string == 'east' then
+    return 2
+  elseif direction_string == 'south' then
+    return 3
+  else
+    return 4
+  end
+end
+go.property('direction_integer', 3)
+
+go.property('input', vmath.vector3())
+go.property('in_minecart', false)
+
 function init(self)
   msg.post("#", "acquire_input_focus")
-  self.direction = "south"
-  self.input = vmath.vector3()
+  self.direction = 'south'
 
   self.minecart_can_go_north = false
   self.minecart_can_go_south = false
@@ -9,7 +24,6 @@ function init(self)
   self.minecart_can_go_west = false
 
   sprite.set_constant('/player#player_in_minecart', 'tint', vmath.vector4(1, 1, 1, 0))
-  self.in_minecart = false
   self.current_sprite = "#sprite"
 
   self.alive = true
@@ -49,6 +63,7 @@ function update(self, dt)
     end
 
     self.direction = compass_direction
+    self.direction_integer = get_direction_integer(compass_direction)
     self.input = vmath.vector3()
   end
 
