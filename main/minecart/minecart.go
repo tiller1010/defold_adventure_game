@@ -1,6 +1,6 @@
 components {
   id: "minecart"
-  component: "/main/scripts/minecart.script"
+  component: "/main/player/minecart.script"
 }
 embedded_components {
   id: "collisionobject"
@@ -40,7 +40,7 @@ embedded_components {
   "}\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/main/minecart.tilesource\"\n"
+  "  texture: \"/main/minecart/minecart.tilesource\"\n"
   "}\n"
   ""
 }
