@@ -1,0 +1,47 @@
+script: "/main/main.gui_script"
+fonts {
+  name: "default"
+  font: "/builtins/fonts/default.font"
+}
+nodes {
+  position {
+    x: 20.0
+    y: 598.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    y: 0.502
+    z: 0.502
+  }
+  type: TYPE_TEXT
+  text: "Health: 100"
+  font: "default"
+  id: "health"
+  pivot: PIVOT_W
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 20.0
+    y: 566.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.502
+    y: 0.6
+  }
+  type: TYPE_TEXT
+  text: "Powerup: none"
+  font: "default"
+  id: "powerup"
+  pivot: PIVOT_W
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

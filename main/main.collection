@@ -405,6 +405,7 @@ instances {
   position {
     x: 509.0
     y: 195.0
+    z: 1.0
   }
   scale3 {
     x: 4.0
@@ -412,3 +413,15 @@ instances {
   }
 }
 scale_along_z: 0
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/main/main.gui\"\n"
+  "}\n"
+  ""
+  position {
+    x: 56.0
+    y: -87.0
+  }
+}

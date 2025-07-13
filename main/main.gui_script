@@ -16,20 +16,11 @@ function update(self, dt)
 	-- Remove this function if not needed
 end
 
-function fixed_update(self, dt)
-	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
-	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
-	-- Physics section of game.project
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
 function on_message(self, message_id, message, sender)
-	if message_id == hash("collision_response") and message.other_group == hash("player") then
-		msg.post("player", "powerup", { powerup = 'freeze' })
-		msg.post('gui#main', 'powerup', { powerup = 'freeze' })
-		go.delete()
+	if message_id == hash('health_change') then
+		gui.set_text(gui.get_node('health'), 'Health: ' .. message.health)
+	elseif message_id == hash('powerup') then
+		gui.set_text(gui.get_node('powerup'), 'Powerup: ' .. message.powerup)
 	end
 end
 
