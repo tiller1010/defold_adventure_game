@@ -19,6 +19,7 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash('health_change') then
 		gui.set_text(gui.get_node('health'), 'Health: ' .. message.health)
+		gui.set(gui.get_node('health_bar'), 'size.x', message.health * 2)
 	elseif message_id == hash('powerup') then
 		gui.set_text(gui.get_node('powerup'), 'Powerup: ' .. message.powerup)
 	end
