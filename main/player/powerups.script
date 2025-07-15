@@ -1,5 +1,9 @@
 function init(self)
 	self.on_cooldown = false
+	self.powerup_ammo = 0
+	self.powerup_max_ammo  = {
+		freeze = 3,
+	}
 end
 
 function final(self)
@@ -26,41 +30,46 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("powerup") then
 		self.powerup = message.powerup
-		-- print(self.powerup)
+		local new_ammo = self.powerup_ammo + message.ammo
+		local max_ammo = self.powerup_max_ammo[message.powerup]
+		if new_ammo >= max_ammo then
+			new_ammo = max_ammo
+		end
+		self.powerup_ammo = new_ammo
+		
+		msg.post('gui#main', 'powerup', { powerup = message.powerup, ammo = new_ammo })
 	end
 end
 
 function on_input(self, action_id, action)
 	local direction_integer = go.get('#player', 'direction_integer')
 	local in_minecart = go.get('#player', 'in_minecart')
-	-- local input = go.get('#player', 'input')
+	
 	if in_minecart
 	and self.powerup == 'freeze'
 	and action_id == hash("Attack")
 	and not self.on_cooldown
+	and self.powerup_ammo > 0
 	then
-		-- local angle = math.atan2(input.y, input.x)
-		local angle = 180
 		local dir = vmath.vector3(0, -1, 0)
 		if direction_integer == 1 then
-			angle = 0
 			dir = vmath.vector3(0, 1, 0)
 		elseif direction_integer == 2 then
-			angle = 90
 			dir = vmath.vector3(1, 0, 0)
 		elseif direction_integer == 4 then
-			angle = 270
 			dir = vmath.vector3(-1, 0, 0)
 		end
 		
-		-- local rotation = vmath.quat_rotation_z(angle)
 		local rotation = vmath.quat_rotation_z(0)
 		local props = { dir = dir }
 		factory.create("#iceball_factory", nil, rotation, props)
 		self.on_cooldown = true
+		self.powerup_ammo = self.powerup_ammo - 1
 		timer.delay(.5, false, function ()
 			self.on_cooldown = false
 		end)
+		
+		msg.post('gui#main', 'powerup_used')
 	end
 end
 

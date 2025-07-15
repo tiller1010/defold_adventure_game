@@ -1,3 +1,5 @@
+go.property('ammo_amount', 3)
+
 function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
@@ -27,8 +29,7 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") and message.other_group == hash("player") then
-		msg.post("player", "powerup", { powerup = 'freeze' })
-		msg.post('gui#main', 'powerup', { powerup = 'freeze' })
+		msg.post("player", "powerup", { powerup = 'freeze', ammo = self.ammo_amount })
 		go.delete()
 	end
 end
