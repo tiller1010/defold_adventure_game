@@ -1,6 +1,6 @@
 components {
-  id: "iceball"
-  component: "/main/player/powerups/iceball.script"
+  id: "fire"
+  component: "/main/powerup_pickups/fire/fire.script"
 }
 embedded_components {
   id: "sprite"
@@ -9,13 +9,9 @@ embedded_components {
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/main/player/powerups/iceball.tilesource\"\n"
+  "  texture: \"/main/powerup_pickups/fire/fire.tilesource\"\n"
   "}\n"
   ""
-  scale {
-    x: 0.25
-    y: 0.25
-  }
 }
 embedded_components {
   id: "collisionobject"
@@ -25,7 +21,7 @@ embedded_components {
   "friction: 0.1\n"
   "restitution: 0.5\n"
   "group: \"default\"\n"
-  "mask: \"enemy\"\n"
+  "mask: \"player\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
@@ -36,8 +32,8 @@ embedded_components {
   "    index: 0\n"
   "    count: 3\n"
   "  }\n"
-  "  data: 5.3225675\n"
-  "  data: 5.272667\n"
+  "  data: 21.0\n"
+  "  data: 21.0\n"
   "  data: 10.0\n"
   "}\n"
   ""

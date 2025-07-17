@@ -1,4 +1,5 @@
 function init(self)
+	self.powerup = 'none'
 	self.powerup_box_nodes = {}
 end
 
@@ -19,13 +20,27 @@ function on_message(self, message_id, message, sender)
 		gui.set_text(gui.get_node('health'), 'Health: ' .. message.health)
 		gui.set(gui.get_node('health_bar'), 'size.x', message.health * 2)
 	elseif message_id == hash('powerup') then
+		if message.powerup ~= self.powerup then
+			self.powerup = message.powerup
+			gui.set_text(gui.get_node('powerup'), 'Powerup: ' .. message.powerup)
+
+			-- Reset box nodes for new powerups
+			for i in pairs(self.powerup_box_nodes) do
+				gui.delete_node(self.powerup_box_nodes[i])
+				self.powerup_box_nodes[i] = nil
+			end
+		end
+			
 		local ammo_x_start = 130
 		local ammo_y_start = 555
-		gui.set_text(gui.get_node('powerup'), 'Powerup: ' .. message.powerup)
 		for i = 1, message.ammo, 1 do
 			if not self.powerup_box_nodes[i] then
 				local new_node = gui.new_box_node(vmath.vector3(i * 50 + ammo_x_start, ammo_y_start, 1), vmath.vector3(40, 40, 1))
-				gui.set_texture(new_node, 'iceball')
+				if message.powerup == 'freeze' then
+					gui.set_texture(new_node, 'iceball')
+				elseif message.powerup == 'fire' then
+					gui.set_texture(new_node, 'fireball')
+				end
 				self.powerup_box_nodes[i] = new_node
 			end
 		end

@@ -3,6 +3,7 @@ function init(self)
 	self.powerup_ammo = 0
 	self.powerup_max_ammo  = {
 		freeze = 3,
+		fire = 2
 	}
 end
 
@@ -29,8 +30,12 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("powerup") then
-		self.powerup = message.powerup
 		local new_ammo = self.powerup_ammo + message.ammo
+		if message.powerup ~= self.powerup then
+			new_ammo = message.ammo
+			self.powerup = message.powerup
+		end
+		
 		local max_ammo = self.powerup_max_ammo[message.powerup]
 		if new_ammo >= max_ammo then
 			new_ammo = max_ammo
@@ -41,35 +46,58 @@ function on_message(self, message_id, message, sender)
 	end
 end
 
+function table_contains(tbl, x)
+	for _, v in pairs(tbl) do
+		if v == x then
+			return true
+		end
+	end
+	return false
+end
+
 function on_input(self, action_id, action)
 	local direction_integer = go.get('#player', 'direction_integer')
 	local in_minecart = go.get('#player', 'in_minecart')
-	
-	if in_minecart
-	and self.powerup == 'freeze'
-	and action_id == hash("Attack")
-	and not self.on_cooldown
-	and self.powerup_ammo > 0
-	then
-		local dir = vmath.vector3(0, -1, 0)
-		if direction_integer == 1 then
-			dir = vmath.vector3(0, 1, 0)
-		elseif direction_integer == 2 then
-			dir = vmath.vector3(1, 0, 0)
-		elseif direction_integer == 4 then
-			dir = vmath.vector3(-1, 0, 0)
+	local has_projectile_powerup = table_contains(
+		{
+			'freeze',
+			'fire',
+		},
+		self.powerup
+	)
+
+	if action_id == hash("Attack") and not self.on_cooldown then
+		if in_minecart then
+			if has_projectile_powerup
+			and self.powerup_ammo > 0
+			then
+				local projectile_factory = '#fireball_factory'
+				if self.powerup == 'freeze' then
+					projectile_factory = '#iceball_factory'
+				end
+				
+				local dir = vmath.vector3(0, -1, 0)
+				if direction_integer == 1 then
+					dir = vmath.vector3(0, 1, 0)
+				elseif direction_integer == 2 then
+					dir = vmath.vector3(1, 0, 0)
+				elseif direction_integer == 4 then
+					dir = vmath.vector3(-1, 0, 0)
+				end
+
+				local angle = math.atan2(dir.y, dir.x)
+				local rotation = vmath.quat_rotation_z(angle)
+				local props = { dir = dir }
+				factory.create(projectile_factory, nil, rotation, props)
+				self.on_cooldown = true
+				self.powerup_ammo = self.powerup_ammo - 1
+				timer.delay(.5, false, function ()
+					self.on_cooldown = false
+				end)
+				
+				msg.post('gui#main', 'powerup_used')
+			end
 		end
-		
-		local rotation = vmath.quat_rotation_z(0)
-		local props = { dir = dir }
-		factory.create("#iceball_factory", nil, rotation, props)
-		self.on_cooldown = true
-		self.powerup_ammo = self.powerup_ammo - 1
-		timer.delay(.5, false, function ()
-			self.on_cooldown = false
-		end)
-		
-		msg.post('gui#main', 'powerup_used')
 	end
 end
 

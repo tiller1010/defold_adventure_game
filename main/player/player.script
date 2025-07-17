@@ -1,3 +1,4 @@
+-- Used for go.property, which has limited allowed types
 local function get_direction_integer(direction_string)
   if direction_string == 'north' then
     return 1
@@ -203,8 +204,11 @@ function on_message(self, message_id, message, sender)
     end
 
   elseif message_id == hash("damage") and self.alive and not self.invincible then
-    self.health = self.health - message.damage
-    -- print('player health', self.health)
+    local new_health = self.health - message.damage
+    if new_health < 0 then
+      new_health = 0
+    end
+    self.health = new_health
     msg.post('gui#main', 'health_change', { health = self.health })
 
      -- Flash red every other tenth of a second for 1 second

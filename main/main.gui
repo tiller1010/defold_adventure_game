@@ -5,7 +5,11 @@ fonts {
 }
 textures {
   name: "iceball"
-  texture: "/main/player/powerups/iceball.tilesource"
+  texture: "/main/player/powerups/freeze/iceball.tilesource"
+}
+textures {
+  name: "fireball"
+  texture: "/main/player/powerups/fire/fireball.tilesource"
 }
 nodes {
   position {

@@ -443,6 +443,41 @@ instances {
     z: 1.0
   }
 }
+instances {
+  id: "fire"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 296.0
+    y: 113.0
+    z: 1.0
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "fire_small"
+  prototype: "/main/powerup_pickups/fire/fire_small.go"
+  position {
+    x: 609.0
+    y: 361.0
+    z: 1.0
+  }
+}
+instances {
+  id: "fire1"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 665.0
+    y: 271.0
+    z: 1.0
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "gui"

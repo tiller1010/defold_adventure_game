@@ -8,7 +8,11 @@ components {
 }
 components {
   id: "iceball_factory"
-  component: "/main/player/powerups/iceball_factory.factory"
+  component: "/main/player/powerups/freeze/iceball_factory.factory"
+}
+components {
+  id: "fireball_factory"
+  component: "/main/player/powerups/fire/fireball_factory.factory"
 }
 embedded_components {
   id: "track_trigger_west"
