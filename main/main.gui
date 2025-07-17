@@ -3,6 +3,10 @@ fonts {
   name: "default"
   font: "/builtins/fonts/default.font"
 }
+textures {
+  name: "iceball"
+  texture: "/main/player/powerups/iceball.tilesource"
+}
 nodes {
   position {
     x: 20.0
@@ -26,7 +30,7 @@ nodes {
 nodes {
   position {
     x: 20.0
-    y: 566.0
+    y: 560.0
   }
   size {
     x: 200.0

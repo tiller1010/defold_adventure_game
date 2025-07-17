@@ -20,17 +20,21 @@ function on_message(self, message_id, message, sender)
 		gui.set(gui.get_node('health_bar'), 'size.x', message.health * 2)
 	elseif message_id == hash('powerup') then
 		local ammo_x_start = 130
-		local ammo_y_start = 565
+		local ammo_y_start = 555
 		gui.set_text(gui.get_node('powerup'), 'Powerup: ' .. message.powerup)
 		for i = 1, message.ammo, 1 do
 			if not self.powerup_box_nodes[i] then
-				local new_node = gui.new_box_node(vmath.vector3(i * 50 + ammo_x_start, ammo_y_start, 1), vmath.vector3(10, 10, 1))
+				local new_node = gui.new_box_node(vmath.vector3(i * 50 + ammo_x_start, ammo_y_start, 1), vmath.vector3(40, 40, 1))
+				gui.set_texture(new_node, 'iceball')
 				self.powerup_box_nodes[i] = new_node
 			end
 		end
 	elseif message_id == hash('powerup_used') then
 		gui.delete_node(self.powerup_box_nodes[#self.powerup_box_nodes])
 		self.powerup_box_nodes[#self.powerup_box_nodes] = nil
+		if not self.powerup_box_nodes[1] then
+			gui.set_text(gui.get_node('powerup'), 'Powerup: none')
+		end
 	end
 end
 
