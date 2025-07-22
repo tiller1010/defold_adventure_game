@@ -190,7 +190,7 @@ function on_message(self, message_id, message, sender)
 
 		if self.health < 1 then
 			self.alive = false
-			-- sprite.play_flipbook("#sprite", "death_west")
+			sprite.play_flipbook("#sprite", "explosion_death")
 		end
 	end
 	

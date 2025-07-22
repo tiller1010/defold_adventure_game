@@ -478,6 +478,20 @@ instances {
     y: 1.5
   }
 }
+instances {
+  id: "enemy1"
+  prototype: "/main/enemy/enemy.go"
+  position {
+    x: 301.0
+    y: 189.0
+    z: 1.0
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "gui"

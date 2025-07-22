@@ -3,6 +3,12 @@ tile_width: 42
 tile_height: 42
 collision_groups: "default"
 animations {
+  id: "explosion_death"
+  start_tile: 8
+  end_tile: 14
+  fps: 6
+}
+animations {
   id: "move_east"
   start_tile: 1
   end_tile: 3
