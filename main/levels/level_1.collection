@@ -1,0 +1,486 @@
+name: "level_1"
+instances {
+  id: "track"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 312.0
+    y: 358.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track1"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 785.0
+    y: 347.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track2"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 300.0
+    y: 197.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track3"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 547.0
+    y: 361.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track4"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 301.0
+    y: 277.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track5"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 301.0
+    y: 35.0
+  }
+  rotation {
+    z: 1.0
+    w: 6.123234E-17
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track6"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 491.0
+    y: 269.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track7"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 778.0
+    y: 266.0
+  }
+  rotation {
+    z: -0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track8"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 411.0
+    y: 269.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track9"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 385.0
+    y: 28.0
+  }
+  rotation {
+    z: -0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track10"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 387.0
+    y: 362.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track11"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 625.0
+    y: 359.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "minecart"
+  prototype: "/main/minecart/minecart.go"
+  position {
+    x: 504.0
+    y: 303.0
+    z: 0.5
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
+}
+instances {
+  id: "player"
+  prototype: "/main/player/player.go"
+  position {
+    x: 897.0
+    y: 393.0
+    z: 1.0
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+  }
+}
+instances {
+  id: "track12"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 399.0
+    y: 102.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track14"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 709.0
+    y: 264.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track15"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 649.0
+    y: 268.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track16"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 573.0
+    y: 269.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track18"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 466.0
+    y: 363.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track19"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 703.0
+    y: 358.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track20"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 299.0
+    y: 117.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track21"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 399.0
+    y: 186.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track22"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 301.0
+    y: 277.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "fire_small"
+  prototype: "/main/powerup_pickups/fire/fire_small.go"
+  position {
+    x: 609.0
+    y: 361.0
+    z: 1.0
+  }
+}
+instances {
+  id: "fire"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 665.0
+    y: 271.0
+    z: 1.0
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "enemy"
+  prototype: "/main/enemy/enemy.go"
+  position {
+    x: 301.0
+    y: 189.0
+    z: 1.0
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
+}
+instances {
+  id: "freeze"
+  prototype: "/main/powerup_pickups/freeze/freeze.go"
+  position {
+    x: 396.0
+    y: 182.0
+    z: 1.0
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "freeze1"
+  prototype: "/main/powerup_pickups/freeze/freeze.go"
+  position {
+    x: 298.0
+    y: 286.0
+    z: 1.0
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "fire1"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 296.0
+    y: 113.0
+    z: 1.0
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "freeze_small"
+  prototype: "/main/powerup_pickups/freeze/freeze_small.go"
+  position {
+    x: 722.0
+    y: 358.0
+    z: 1.0
+  }
+}
+instances {
+  id: "enemy1"
+  prototype: "/main/enemy/enemy.go"
+  position {
+    x: 464.0
+    y: 361.0
+    z: 1.0
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
+}
+instances {
+  id: "freeze_small1"
+  prototype: "/main/powerup_pickups/freeze/freeze_small.go"
+  position {
+    x: 299.0
+    y: 37.0
+    z: 1.0
+  }
+}
+instances {
+  id: "level_1_exit"
+  prototype: "/main/level_exit/level_exit.go"
+  position {
+    x: 788.0
+    y: 359.0
+    z: 1.0
+  }
+  scale3 {
+    x: 3.0
+    y: 3.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"level\"\n"
+  "  component: \"/main/levels/level.gui\"\n"
+  "}\n"
+  ""
+}

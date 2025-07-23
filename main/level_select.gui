@@ -1,0 +1,51 @@
+script: "/main/level_select.gui_script"
+nodes {
+  position {
+    x: 272.0
+    y: 430.0
+  }
+  type: TYPE_TEMPLATE
+  id: "level_1_btn"
+  inherit_alpha: true
+  template: "/main/button/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "level_1_btn/button_box"
+  parent: "level_1_btn"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Level 1"
+  id: "level_1_btn/text"
+  parent: "level_1_btn/button_box"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 670.0
+    y: 430.0
+  }
+  type: TYPE_TEMPLATE
+  id: "level_2_btn"
+  inherit_alpha: true
+  template: "/main/button/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "level_2_btn/button_box"
+  parent: "level_2_btn"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Level 2"
+  id: "level_2_btn/text"
+  parent: "level_2_btn/button_box"
+  overridden_fields: 8
+  template_node_child: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

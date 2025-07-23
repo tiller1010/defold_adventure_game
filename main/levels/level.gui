@@ -1,4 +1,4 @@
-script: "/main/main.gui_script"
+script: "/main/levels/level.gui_script"
 fonts {
   name: "default"
   font: "/builtins/fonts/default.font"
@@ -95,6 +95,76 @@ nodes {
   pivot: PIVOT_W
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 462.0
+    y: 872.0
+  }
+  size {
+    x: 300.0
+    y: 227.0
+  }
+  type: TYPE_BOX
+  id: "finished_modal"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 21.561205
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Congrats!"
+  font: "default"
+  id: "text"
+  parent: "finished_modal"
+  inherit_alpha: true
+}
+nodes {
+  type: TYPE_TEMPLATE
+  id: "next_level"
+  parent: "finished_modal"
+  inherit_alpha: true
+  template: "/main/button/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "next_level/button_box"
+  parent: "next_level"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Next Level >"
+  id: "next_level/text"
+  parent: "next_level/button_box"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 886.0
+    y: 601.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Level 1"
+  font: "default"
+  id: "level_indicator"
+  inherit_alpha: true
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

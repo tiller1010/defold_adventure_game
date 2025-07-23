@@ -209,7 +209,7 @@ function on_message(self, message_id, message, sender)
       new_health = 0
     end
     self.health = new_health
-    msg.post('gui#main', 'health_change', { health = self.health })
+    msg.post('gui#level', 'health_change', { health = self.health })
 
      -- Flash red every other tenth of a second for 1 second
     for i = 0, 1, .1 do
@@ -236,6 +236,11 @@ function on_message(self, message_id, message, sender)
       exit_minecart(self)
       sprite.play_flipbook("#sprite", "death_west")
     end
+
+  elseif message_id == hash('level_completed') then
+    self.invincible = true
+    -- Disable movement, maybe move this to a new property
+    self.alive = false
   end
 end
 

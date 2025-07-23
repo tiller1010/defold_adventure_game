@@ -1,0 +1,106 @@
+function init(self)
+	_G.LEVEL_COUNT = 2
+	
+	msg.post('.', 'acquire_input_focus')
+
+	self.current_level = 0
+
+	local save_filename = sys.get_save_file('adventure_game', 'level_save_data')
+	local save_data = sys.load(save_filename)
+
+	if save_data.levels then
+		self.levels = save_data.levels
+	else
+		self.levels = {
+			level_1 = {
+				unlocked = true
+			}
+		}
+
+		for i = 2, _G.LEVEL_COUNT do
+			self.levels['level_' .. i] = {
+				unlocked = false
+			}
+		end
+	end
+
+	msg.post('/guis#level_select', 'levels_data', { levels_data = self.levels })
+
+	-- MOVE TO START BUTTON WHEN START SCREEN IS ADDED
+	msg.post('/guis#level_select', 'show_level_select')
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash('load_level') and self.levels['level_' .. message.level].unlocked then
+		self.current_level = message.level
+		local proxy = '#proxy_level_' .. self.current_level
+		msg.post(proxy, 'load')
+
+	elseif message_id == hash('next_level') then
+		msg.post('#', 'unload_level')
+		msg.post('#', 'load_level', { level = self.current_level + 1})
+
+	elseif message_id == hash('unload_level') then
+		local proxy = '#proxy_level_' .. self.current_level
+		msg.post(proxy, 'disable')
+		msg.post(proxy, 'final')
+		msg.post(proxy, 'unload')
+
+	elseif message_id == hash('level_unlocked') and self.levels['level_' .. message.level] then
+		self.levels['level_' .. message.level].unlocked = true
+		local save_filename = sys.get_save_file('adventure_game', 'level_save_data')
+		sys.save(save_filename, { levels = self.levels })
+
+	elseif message_id == hash('proxy_loaded') then
+		msg.post(sender, 'init')
+		msg.post(sender, 'enable')
+		local level = 'level_' .. self.current_level
+		msg.post(
+			level .. ':/gui#level',
+			'level_loaded',
+			{
+				level = self.current_level,
+				next_level_exists = self.levels['level_' .. self.current_level + 1] ~= nil
+			}
+		)
+	end
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here. The game object this script is attached to
+	-- must have acquired input focus:
+	--
+	--		msg.post(".", "acquire_input_focus")
+	--
+	-- All mapped input bindings will be received. Mouse and touch input will
+	-- be received regardless of where on the screen it happened.
+	-- Learn more: https://defold.com/manuals/input/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end
