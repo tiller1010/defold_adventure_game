@@ -155,7 +155,7 @@ function on_message(self, message_id, message, sender)
 	if message.other_group == hash("track_trigger") then
 		update_movement_properties(self, message_id, message, sender)
 		
-	elseif message.other_group == hash("player") and self.alive then
+	elseif message.other_group == hash("player") and self.alive and not self.frozen then
 		msg.post("player", "damage", { damage = 25 })
 		
 	elseif message_id == hash('freeze') then
