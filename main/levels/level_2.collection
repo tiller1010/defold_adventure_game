@@ -475,13 +475,13 @@ instances {
   id: "level_2_exit"
   prototype: "/main/level_exit/level_exit.go"
   position {
-    x: 305.0
-    y: 359.0
+    x: 314.0
+    y: 399.0
     z: 1.0
   }
   scale3 {
-    x: 3.0
-    y: 3.0
+    x: 2.0
+    y: 2.0
   }
 }
 scale_along_z: 0
