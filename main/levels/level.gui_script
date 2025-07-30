@@ -62,8 +62,14 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash('level_loaded') then
 		gui.set_text(gui.get_node('level_indicator'), 'Level ' .. message.level)
 		if not message.next_level_exists then
-			gui.delete_node(gui.get_node('next_level/button_box'))
+			local next_btn = gui.get_node('next_level/button_box')
+			gui.delete_node(next_btn)
 			self.next_button_exists = false
+
+			local position = vmath.vector3(0, -10, 0)
+			local all_levels_completed_text = gui.new_text_node(position, 'All Levels Completed!')
+			gui.set_parent(all_levels_completed_text, gui.get_node('finished_modal'))
+			gui.set_color(all_levels_completed_text, vmath.vector3(0, 0, 0))
 		end
 	end
 end
