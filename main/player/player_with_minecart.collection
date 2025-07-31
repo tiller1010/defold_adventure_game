@@ -1,0 +1,28 @@
+name: "player_with_minecart"
+instances {
+  id: "minecart"
+  prototype: "/main/minecart/minecart.go"
+  position {
+    x: 5.0
+    y: 27.0
+    z: 0.5
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
+}
+instances {
+  id: "player"
+  prototype: "/main/player/player.go"
+  position {
+    y: 35.0
+    z: 1.0
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+  }
+}
+scale_along_z: 0

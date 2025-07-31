@@ -1,3 +1,5 @@
+local player_helper = require('main/player/player_helpers')
+
 function init(self)
 	self.movement_vector = vmath.vector3()
 	
@@ -156,7 +158,8 @@ function on_message(self, message_id, message, sender)
 		update_movement_properties(self, message_id, message, sender)
 		
 	elseif message.other_group == hash("player") and self.alive and not self.frozen then
-		msg.post("player", "damage", { damage = 25 })
+		local player_url = player_helper.get_player_url(go)
+		msg.post(player_url, "damage", { damage = 25 })
 		
 	elseif message_id == hash('freeze') then
 		self.frozen = true

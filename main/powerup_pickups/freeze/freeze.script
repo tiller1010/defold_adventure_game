@@ -1,3 +1,5 @@
+local player_helper = require('main/player/player_helpers')
+
 go.property('ammo_amount', 3)
 
 function init(self)
@@ -29,7 +31,8 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") and message.other_group == hash("player") then
-		msg.post("player", "powerup", { powerup = 'freeze', ammo = self.ammo_amount })
+		local player_url = player_helper.get_player_url(go)
+		msg.post(player_url, "powerup", { powerup = 'freeze', ammo = self.ammo_amount })
 		go.delete()
 	end
 end

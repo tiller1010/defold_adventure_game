@@ -42,7 +42,7 @@ function on_message(self, message_id, message, sender)
 		end
 		self.powerup_ammo = new_ammo
 		
-		msg.post('gui#level', 'powerup', { powerup = message.powerup, ammo = new_ammo })
+		msg.post('/gui#level', 'powerup', { powerup = message.powerup, ammo = new_ammo })
 	end
 end
 
@@ -97,7 +97,7 @@ function on_input(self, action_id, action)
 					self.on_cooldown = false
 				end)
 				
-				msg.post('gui#level', 'powerup_used')
+				msg.post('/gui#level', 'powerup_used')
 			end
 		end
 	end

@@ -1,5 +1,5 @@
 function init(self)
-	_G.LEVEL_COUNT = 2
+	_G.LEVEL_COUNT = 3
 	
 	msg.post('.', 'acquire_input_focus')
 
@@ -16,8 +16,10 @@ function init(self)
 				unlocked = true
 			}
 		}
+	end
 
-		for i = 2, _G.LEVEL_COUNT do
+	for i = 2, _G.LEVEL_COUNT do
+		if not self.levels['level_' .. i] then
 			self.levels['level_' .. i] = {
 				unlocked = false
 			}

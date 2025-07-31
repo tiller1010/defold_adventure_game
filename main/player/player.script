@@ -1,3 +1,5 @@
+local player_helper = require('main/player/player_helpers')
+
 -- Used for go.property, which has limited allowed types
 local function get_direction_integer(direction_string)
   if direction_string == 'north' then
@@ -144,7 +146,7 @@ function enter_minecart(self)
     go.set_position(self.closest_track_position)
   end
 
-  sprite.play_flipbook("/player#player_in_minecart", 'minecart_' .. self.direction)
+  sprite.play_flipbook("#player_in_minecart", 'minecart_' .. self.direction)
 
   -- Set player default sprite to transparent, show player minecart sprite
   sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 1, 0))
@@ -152,7 +154,8 @@ function enter_minecart(self)
   self.current_sprite = "#player_in_minecart"
 
   -- Minecart game object
-  sprite.set_constant('/minecart#minecart_sprite', 'tint', vmath.vector4(1, 1, 1, 0))
+  local minecart_url = player_helper.get_minecart_url(go)
+  sprite.set_constant(minecart_url .. '#minecart_sprite', 'tint', vmath.vector4(1, 1, 1, 0))
 end
 
 function exit_minecart(self)
@@ -165,7 +168,8 @@ function exit_minecart(self)
   self.current_sprite = "#sprite"
 
   -- Minecart game object
-  sprite.set_constant('/minecart#minecart_sprite', 'tint', vmath.vector4(1, 1, 1, 1))
+  local minecart_url = player_helper.get_minecart_url(go)
+  sprite.set_constant(minecart_url .. '#minecart_sprite', 'tint', vmath.vector4(1, 1, 1, 1))
 end
 
 function on_message(self, message_id, message, sender)
@@ -215,7 +219,7 @@ function on_message(self, message_id, message, sender)
       new_health = 0
     end
     self.health = new_health
-    msg.post('gui#level', 'health_change', { health = self.health })
+    msg.post('/gui#level', 'health_change', { health = self.health })
 
      -- Flash red every other tenth of a second for 1 second
     for i = 0, 1, .1 do
