@@ -1,0 +1,44 @@
+name: "bend"
+instances {
+  id: "track"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 84.0
+    y: 42.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track1"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    y: 56.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track2"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 90.0
+    y: -42.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+scale_along_z: 0

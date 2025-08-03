@@ -1,0 +1,59 @@
+name: "5_long"
+instances {
+  id: "track"
+  prototype: "/main/tracks/track_straight.go"
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track1"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    y: 83.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track2"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    y: -83.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track3"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    y: 165.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+instances {
+  id: "track4"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    y: -167.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+}
+scale_along_z: 0

@@ -1,8 +1,16 @@
 local player_helper = require('main/player/player_helpers')
 
+-- Configurable properties to enable/disable directions per enemy
+go.property('goes_north', true)
+go.property('goes_south', true)
+go.property('goes_east', true)
+go.property('goes_west', true)
+
 function init(self)
 	self.movement_vector = vmath.vector3()
-	
+
+	-- Properties to check if track exists in a direction
+	-- Will always be false if "goes_" equivalent is false
 	self.can_go_north = false
 	self.can_go_south = false
 	self.can_go_east = false
@@ -19,15 +27,9 @@ function init(self)
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
 end
 
 function fixed_update(self, dt)
@@ -82,30 +84,31 @@ function update_movement_properties(self, message_id, message, sender)
 
 	if message_id == hash("trigger_response") then
 		for _, direction in pairs({ "north", "south", "east", "west" }) do
+			if self['goes_' .. direction] then
+				-- Prevent enemy from immediately turning around after taking a turn,
+				-- since the opposite direction would then become available after traversing a single tile
+				local already_moving_along_axis = false
+				if ((direction == "east" or direction == "west") and self.going_horizontal)
+				or ((direction == "north" or direction == "south") and self.going_vertical) then
+					already_moving_along_axis = true
+				end
 
-			-- Prevent enemy from immediately turning around after taking a turn,
-			-- since the opposite direction would then become available after traversing a single tile
-			local already_moving_along_axis = false
-			if ((direction == "east" or direction == "west") and self.going_horizontal)
-			or ((direction == "north" or direction == "south") and self.going_vertical) then
-				already_moving_along_axis = true
-			end
-
-			if hash(track_in_direction) == hash("track_trigger_" .. direction) then
-				if message.enter then
-					if not table_has_value(self[direction .. "_tracks"])
-					and not already_moving_along_axis then
-						self.new_directions = true
-					end
-					self[direction .. "_tracks"][message.other_id] = true
-					self["can_go_" .. direction] = true
-				else
-					if table_value_count(self[direction .. "_tracks"]) == 1 then
-						self.new_directions = true
-					end
-					self[direction .. "_tracks"][message.other_id] = nil
-					if not table_has_value(self[direction .. "_tracks"]) then
-						self["can_go_" .. direction] = false
+				if hash(track_in_direction) == hash("track_trigger_" .. direction) then
+					if message.enter then
+						if not table_has_value(self[direction .. "_tracks"])
+						and not already_moving_along_axis then
+							self.new_directions = true
+						end
+						self[direction .. "_tracks"][message.other_id] = true
+						self["can_go_" .. direction] = true
+					else
+						if table_value_count(self[direction .. "_tracks"]) == 1 then
+							self.new_directions = true
+						end
+						self[direction .. "_tracks"][message.other_id] = nil
+						if not table_has_value(self[direction .. "_tracks"]) then
+							self["can_go_" .. direction] = false
+						end
 					end
 				end
 			end
@@ -200,19 +203,7 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-	-- Add input-handling code here. The game object this script is attached to
-	-- must have acquired input focus:
-	--
-	--		msg.post(".", "acquire_input_focus")
-	--
-	-- All mapped input bindings will be received. Mouse and touch input will
-	-- be received regardless of where on the screen it happened.
-	-- Learn more: https://defold.com/manuals/input/
-	-- Remove this function if not needed
 end
 
 function on_reload(self)
-	-- Add reload-handling code here
-	-- Learn more: https://defold.com/manuals/hot-reload/
-	-- Remove this function if not needed
 end
