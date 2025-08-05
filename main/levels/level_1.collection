@@ -5,6 +5,7 @@ instances {
   position {
     x: 312.0
     y: 358.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -13,7 +14,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -22,11 +23,12 @@ instances {
   position {
     x: 785.0
     y: 347.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -35,11 +37,12 @@ instances {
   position {
     x: 300.0
     y: 197.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -48,6 +51,7 @@ instances {
   position {
     x: 547.0
     y: 361.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -56,7 +60,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -65,11 +69,12 @@ instances {
   position {
     x: 301.0
     y: 277.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -78,6 +83,7 @@ instances {
   position {
     x: 301.0
     y: 35.0
+    z: 0.1
   }
   rotation {
     z: 1.0
@@ -86,7 +92,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -95,6 +101,7 @@ instances {
   position {
     x: 491.0
     y: 269.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -103,7 +110,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -112,6 +119,7 @@ instances {
   position {
     x: 778.0
     y: 266.0
+    z: 0.1
   }
   rotation {
     z: -0.70710677
@@ -120,7 +128,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -129,6 +137,7 @@ instances {
   position {
     x: 411.0
     y: 269.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -137,7 +146,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -146,6 +155,7 @@ instances {
   position {
     x: 385.0
     y: 28.0
+    z: 0.1
   }
   rotation {
     z: -0.70710677
@@ -154,7 +164,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -163,6 +173,7 @@ instances {
   position {
     x: 387.0
     y: 362.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -171,7 +182,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -180,6 +191,7 @@ instances {
   position {
     x: 625.0
     y: 359.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -188,7 +200,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -211,7 +223,7 @@ instances {
   position {
     x: 499.0
     y: 308.0
-    z: 1.0
+    z: 0.3
   }
   scale3 {
     x: 4.0
@@ -224,11 +236,12 @@ instances {
   position {
     x: 399.0
     y: 102.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -237,6 +250,7 @@ instances {
   position {
     x: 709.0
     y: 264.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -245,7 +259,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -254,6 +268,7 @@ instances {
   position {
     x: 649.0
     y: 268.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -262,7 +277,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -271,6 +286,7 @@ instances {
   position {
     x: 573.0
     y: 269.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -279,7 +295,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -288,6 +304,7 @@ instances {
   position {
     x: 466.0
     y: 363.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -296,7 +313,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -305,6 +322,7 @@ instances {
   position {
     x: 703.0
     y: 358.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -313,7 +331,7 @@ instances {
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -322,11 +340,12 @@ instances {
   position {
     x: 299.0
     y: 117.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -335,11 +354,12 @@ instances {
   position {
     x: 399.0
     y: 186.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -348,11 +368,12 @@ instances {
   position {
     x: 301.0
     y: 277.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
     y: 2.0
-    z: 2.0
+    z: 0.2
   }
 }
 instances {
@@ -361,7 +382,7 @@ instances {
   position {
     x: 609.0
     y: 361.0
-    z: 1.0
+    z: 0.2
   }
 }
 instances {
@@ -370,7 +391,7 @@ instances {
   position {
     x: 665.0
     y: 271.0
-    z: 1.0
+    z: 0.2
   }
   scale3 {
     x: 1.5
@@ -383,7 +404,7 @@ instances {
   position {
     x: 301.0
     y: 189.0
-    z: 1.0
+    z: 0.3
   }
   scale3 {
     x: 4.0
@@ -397,7 +418,7 @@ instances {
   position {
     x: 396.0
     y: 182.0
-    z: 1.0
+    z: 0.2
   }
   scale3 {
     x: 1.5
@@ -410,7 +431,7 @@ instances {
   position {
     x: 298.0
     y: 286.0
-    z: 1.0
+    z: 0.2
   }
   scale3 {
     x: 1.5
@@ -423,7 +444,7 @@ instances {
   position {
     x: 296.0
     y: 113.0
-    z: 1.0
+    z: 0.2
   }
   scale3 {
     x: 1.5
@@ -436,7 +457,7 @@ instances {
   position {
     x: 722.0
     y: 358.0
-    z: 1.0
+    z: 0.2
   }
 }
 instances {
@@ -445,7 +466,7 @@ instances {
   position {
     x: 464.0
     y: 361.0
-    z: 1.0
+    z: 0.3
   }
   scale3 {
     x: 4.0
@@ -459,7 +480,7 @@ instances {
   position {
     x: 299.0
     y: 37.0
-    z: 1.0
+    z: 0.2
   }
 }
 instances {
@@ -468,7 +489,7 @@ instances {
   position {
     x: 783.0
     y: 398.0
-    z: 1.0
+    z: 0.2
   }
   scale3 {
     x: 2.0
@@ -481,6 +502,14 @@ embedded_instances {
   data: "components {\n"
   "  id: \"level\"\n"
   "  component: \"/main/levels/level.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"level_\"\n"
+  "  component: \"/main/level_1.tilemap\"\n"
   "}\n"
   ""
 }
