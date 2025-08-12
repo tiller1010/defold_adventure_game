@@ -1,4 +1,5 @@
-local player_helper = require('main/player/player_helpers')
+local player_helpers = require('main/player/player_helpers')
+local level_exit_helpers = require('main/level_exit/level_exit_helpers')
 
 -- Configurable properties to enable/disable directions per enemy
 go.property('goes_north', true)
@@ -161,7 +162,7 @@ function on_message(self, message_id, message, sender)
 		update_movement_properties(self, message_id, message, sender)
 		
 	elseif message.other_group == hash("player") and self.alive and not self.frozen then
-		local player_url = player_helper.get_player_url(go)
+		local player_url = player_helpers.get_player_url(go)
 		msg.post(player_url, "damage", { damage = 25 })
 		
 	elseif message_id == hash('freeze') then
@@ -197,6 +198,8 @@ function on_message(self, message_id, message, sender)
 		if self.health < 1 then
 			self.alive = false
 			sprite.play_flipbook("#sprite", "explosion_death")
+			local level_exit_url = level_exit_helpers.get_level_exit_url(go, _G.LEVEL_COUNT)
+			msg.post(level_exit_url, 'enemy_killed')
 		end
 	end
 	

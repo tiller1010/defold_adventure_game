@@ -1,8 +1,18 @@
+-- Condition 1: Kill all enemies
+go.property('win_condition', 0)
+go.property('enemies_count', 0)
+
 function init(self)
 	for i = 1, _G.LEVEL_COUNT do
 		if hash('/level_' .. i .. '_exit') == go.get_id() then
 			self.level_number = i
+			break
 		end
+	end
+
+	if self.win_condition ~= 0 then
+		sprite.set_constant('#sprite', 'tint', vmath.vector4(.5, .5, .5, .5))
+		msg.post('#collisionobject', 'disable')
 	end
 end
 
@@ -32,6 +42,12 @@ function on_message(self, message_id, message, sender)
 		msg.post('gui#level', 'level_completed')
 		msg.post('player', 'level_completed')
 		msg.post('main:/loader', 'level_unlocked', { level = self.level_number + 1 })
+	elseif message_id == hash('enemy_killed') and self.win_condition == 1 then
+		self.enemies_count = self.enemies_count - 1
+		if self.enemies_count == 0 then
+			msg.post('#collisionobject', 'enable')
+			sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 1, 1))
+		end
 	end
 end
 

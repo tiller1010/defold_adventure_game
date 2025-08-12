@@ -491,9 +491,100 @@ instances {
     y: 398.0
     z: 0.2
   }
+  component_properties {
+    id: "level_exit"
+    properties {
+      id: "win_condition"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "enemies_count"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
   scale3 {
     x: 2.0
     y: 2.0
+  }
+}
+instances {
+  id: "fire2"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 785.0
+    y: 273.0
+    z: 0.2
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "fire3"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 663.0
+    y: 368.0
+    z: 0.2
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "fire4"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 408.0
+    y: 263.0
+    z: 0.2
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "fire5"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 296.0
+    y: 371.0
+    z: 0.2
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "fire6"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 411.0
+    y: 108.0
+    z: 0.2
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "fire7"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 400.0
+    y: 365.0
+    z: 0.2
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
   }
 }
 scale_along_z: 0
