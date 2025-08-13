@@ -1,20 +1,9 @@
--- Condition 1: Kill all enemies
--- Condition 2: Key required
-go.property('win_condition', 0)
-go.property('enemies_count', 0)
+local level_exit_helpers = require('main/level_exit/level_exit_helpers')
 
 function init(self)
-	for i = 1, _G.LEVEL_COUNT do
-		if hash('/level_' .. i .. '_exit') == go.get_id() then
-			self.level_number = i
-			break
-		end
-	end
-
-	if self.win_condition ~= 0 then
-		sprite.set_constant('#sprite', 'tint', vmath.vector4(.5, .5, .5, .5))
-		msg.post('#collisionobject', 'disable')
-	end
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
 end
 
 function final(self)
@@ -38,25 +27,11 @@ function fixed_update(self, dt)
 	-- Remove this function if not needed
 end
 
-function unlock_exit(msg, sprite)
-	msg.post('#collisionobject', 'enable')
-	sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 1, 1))
-end
-
 function on_message(self, message_id, message, sender)
-	if message_id == hash('collision_response') then
-		msg.post('gui#level', 'level_completed')
-		msg.post('player', 'level_completed')
-		msg.post('main:/loader', 'level_unlocked', { level = self.level_number + 1 })
-		
-	elseif message_id == hash('enemy_killed') and self.win_condition == 1 then
-		self.enemies_count = self.enemies_count - 1
-		if self.enemies_count == 0 then
-			unlock_exit(msg, sprite)
-		end
-		
-	elseif message_id == hash('key_picked_up') and self.win_condition == 2 then
-		unlock_exit(msg, sprite)
+	if message_id == hash("collision_response") and message.other_group == hash("player") then
+		local level_exit_url = level_exit_helpers.get_level_exit_url(go, _G.LEVEL_COUNT)
+		msg.post(level_exit_url, 'key_picked_up')
+		go.delete()
 	end
 end
 

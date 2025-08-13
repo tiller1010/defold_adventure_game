@@ -479,9 +479,26 @@ instances {
     y: 399.0
     z: 1.0
   }
+  component_properties {
+    id: "level_exit"
+    properties {
+      id: "win_condition"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
   scale3 {
     x: 2.0
     y: 2.0
+  }
+}
+instances {
+  id: "key"
+  prototype: "/main/level_exit/key.go"
+  position {
+    x: 555.0
+    y: 360.0
+    z: 1.0
   }
 }
 scale_along_z: 0
