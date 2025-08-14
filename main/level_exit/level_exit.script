@@ -1,3 +1,5 @@
+local player_helpers = require('main/player/player_helpers')
+
 -- Condition 1: Kill all enemies
 -- Condition 2: Key required
 go.property('win_condition', 0)
@@ -46,7 +48,8 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash('collision_response') then
 		msg.post('gui#level', 'level_completed')
-		msg.post('player', 'level_completed')
+		local player_url = player_helpers.get_player_url(go)
+		msg.post(player_url, 'level_completed')
 		msg.post('main:/loader', 'level_unlocked', { level = self.level_number + 1 })
 		
 	elseif message_id == hash('enemy_killed') and self.win_condition == 1 then
