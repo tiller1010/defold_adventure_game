@@ -624,7 +624,7 @@ embedded_instances {
   id: "map"
   data: "components {\n"
   "  id: \"level_\"\n"
-  "  component: \"/main/level_1.tilemap\"\n"
+  "  component: \"/main/levels/tilemaps/level_1.tilemap\"\n"
   "}\n"
   ""
 }
