@@ -1,6 +1,7 @@
 local player_helper = require('main/player/player_helpers')
 
 go.property('ammo_amount', 2)
+go.property('regenerates', false)
 
 function init(self)
 	-- Add initialization code here
@@ -33,7 +34,18 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") and message.other_group == hash("player") then
 		local player_url = player_helper.get_player_url(go)
 		msg.post(player_url, "powerup", { powerup = 'fire', ammo = self.ammo_amount })
-		go.delete()
+		
+		if self.regenerates then
+			msg.post('#collisionobject', 'disable')
+			sprite.set_constant('#sprite', 'tint', vmath.vector4(.5, .5, .5, .5))
+			
+			timer.delay(5, false, function ()
+				msg.post('#collisionobject', 'enable')
+				sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 1, 1))
+			end)
+		else
+			go.delete()
+		end
 	end
 end
 

@@ -238,7 +238,7 @@ function on_message(self, message_id, message, sender)
     self.invincible = true
     timer.delay(2, false, function ()
       self.invincible = false
-      sprite.set_constant(self.current_sprite, 'tint', vmath.vector4(1, 1, 1,1 ))
+      sprite.set_constant(self.current_sprite, 'tint', vmath.vector4(1, 1, 1, 1))
     end)
     
     if self.health < 1 then

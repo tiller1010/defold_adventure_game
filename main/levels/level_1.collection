@@ -393,6 +393,14 @@ instances {
     y: 271.0
     z: 0.2
   }
+  component_properties {
+    id: "fire"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
   scale3 {
     x: 1.5
     y: 1.5
@@ -530,6 +538,14 @@ instances {
     y: 368.0
     z: 0.2
   }
+  component_properties {
+    id: "fire"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
   scale3 {
     x: 1.5
     y: 1.5
@@ -555,6 +571,14 @@ instances {
     x: 296.0
     y: 371.0
     z: 0.2
+  }
+  component_properties {
+    id: "fire"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
   }
   scale3 {
     x: 1.5
