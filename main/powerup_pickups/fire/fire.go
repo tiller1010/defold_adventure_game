@@ -38,3 +38,17 @@ embedded_components {
   "}\n"
   ""
 }
+embedded_components {
+  id: "meter"
+  type: "sprite"
+  data: "default_animation: \"anim\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "textures {\n"
+  "  sampler: \"texture_sampler\"\n"
+  "  texture: \"/main/meter.tilesource\"\n"
+  "}\n"
+  ""
+  position {
+    z: 0.1
+  }
+}
