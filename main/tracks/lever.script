@@ -1,0 +1,24 @@
+go.property('track_number', 0)
+
+function init(self)
+	msg.post("#", "acquire_input_focus")
+	self.player_can_interact = false
+end
+
+function on_message(self, message_id, message, sender)
+	if message.other_group == hash("player")
+	and message_id == hash("trigger_response") then
+		if message.enter then
+			self.player_can_interact = true
+
+		else
+			self.player_can_interact = false
+		end
+	end
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("Interact") and action.released and self.player_can_interact then
+		msg.post('track' .. self.track_number, 'interact_with_lever')
+	end
+end

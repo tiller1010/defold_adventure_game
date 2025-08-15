@@ -84,12 +84,53 @@ instances {
   prototype: "/main/level_exit/level_exit.go"
   position {
     x: 654.0
-    y: 283.0
+    y: 376.0
     z: 1.0
   }
   scale3 {
     x: 2.0
     y: 2.0
+  }
+}
+instances {
+  id: "lever"
+  prototype: "/main/tracks/lever.go"
+  position {
+    x: 458.0
+    y: 402.0
+  }
+  component_properties {
+    id: "lever"
+    properties {
+      id: "track_number"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+instances {
+  id: "track1"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 654.0
+    y: 319.0
+  }
+  component_properties {
+    id: "track"
+    properties {
+      id: "disabled"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
   }
 }
 collection_instances {

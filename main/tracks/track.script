@@ -1,0 +1,22 @@
+go.property('disabled', false)
+
+function init(self)
+	if self.disabled then
+		msg.post('#track_collisionobject', 'disable')
+		sprite.set_constant('#track_sprite', 'tint', vmath.vector4(1, 1, 1, .5))
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash('interact_with_lever') then
+		if self.disabled then
+			msg.post('#track_collisionobject', 'enable')
+			sprite.set_constant('#track_sprite', 'tint', vmath.vector4(1, 1, 1, 1))
+			self.disabled = false
+		else
+			msg.post('#track_collisionobject', 'disable')
+			sprite.set_constant('#track_sprite', 'tint', vmath.vector4(1, 1, 1, .5))
+			self.disabled = true
+		end
+	end
+end
