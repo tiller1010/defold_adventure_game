@@ -1,5 +1,5 @@
 components {
-  id: "freeze"
+  id: "fire"
   component: "/main/powerup_pickups/fire/fire.script"
   properties {
     id: "ammo_amount"

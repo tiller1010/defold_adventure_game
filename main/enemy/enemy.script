@@ -27,12 +27,6 @@ function init(self)
 	self.health = 20
 end
 
-function final(self)
-end
-
-function update(self, dt)
-end
-
 function fixed_update(self, dt)
 	local function enemy_move(compass_direction)
 		local position = go.get_position()
@@ -165,10 +159,11 @@ function on_message(self, message_id, message, sender)
 		local player_url = player_helpers.get_player_url(go)
 		msg.post(player_url, "damage", { damage = 25 })
 		
-	elseif message_id == hash('freeze') then
+	elseif message_id == hash('freeze') and self.alive then
 		self.frozen = true
 		-- Set blue tint
-		sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 2, 1))
+		sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 2, .5))
+		sprite.play_flipbook('#sprite', 'frozen_' .. self.direction)
 		timer.delay(3, false, function () 
 			self.frozen = false
 			-- Remove blue tint
@@ -203,10 +198,4 @@ function on_message(self, message_id, message, sender)
 		end
 	end
 	
-end
-
-function on_input(self, action_id, action)
-end
-
-function on_reload(self)
 end

@@ -9,6 +9,35 @@ animations {
   fps: 6
 }
 animations {
+  id: "frozen_east"
+  start_tile: 1
+  end_tile: 1
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 4
+}
+animations {
+  id: "frozen_north"
+  start_tile: 6
+  end_tile: 6
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 4
+}
+animations {
+  id: "frozen_south"
+  start_tile: 4
+  end_tile: 4
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 4
+}
+animations {
+  id: "frozen_west"
+  start_tile: 1
+  end_tile: 1
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 4
+  flip_horizontal: 1
+}
+animations {
   id: "move_east"
   start_tile: 1
   end_tile: 3

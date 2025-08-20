@@ -1,0 +1,153 @@
+name: "level_3"
+instances {
+  id: "level_5_exit"
+  prototype: "/main/level_exit/level_exit.go"
+  position {
+    x: 719.0
+    y: 309.0
+    z: 0.2
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+instances {
+  id: "enemy"
+  prototype: "/main/enemy/enemy.go"
+  position {
+    x: 702.0
+    y: 295.0
+    z: 1.0
+  }
+  component_properties {
+    id: "enemy"
+    properties {
+      id: "goes_north"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "goes_south"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
+}
+instances {
+  id: "track2"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 623.0
+    y: 287.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track3"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 706.0
+    y: 287.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track5"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 297.0
+    y: 287.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "freeze"
+  prototype: "/main/powerup_pickups/freeze/freeze.go"
+  position {
+    x: 117.0
+    y: 187.0
+    z: 1.0
+  }
+  component_properties {
+    id: "freeze"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+collection_instances {
+  id: "player_with_minecart"
+  collection: "/main/player/player_with_minecart.collection"
+  position {
+    x: 183.0
+    y: 292.0
+  }
+}
+collection_instances {
+  id: "intersection"
+  collection: "/main/tracks/segments/intersection.collection"
+  position {
+    x: 460.0
+    y: 287.0
+  }
+}
+collection_instances {
+  id: "bend"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 172.0
+    y: 197.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"level\"\n"
+  "  component: \"/main/levels/level.gui\"\n"
+  "}\n"
+  ""
+}
