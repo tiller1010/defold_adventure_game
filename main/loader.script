@@ -1,5 +1,5 @@
 function init(self)
-	_G.LEVEL_COUNT = 3
+	_G.LEVEL_COUNT = 4
 	
 	msg.post('.', 'acquire_input_focus')
 
