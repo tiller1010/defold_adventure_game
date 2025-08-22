@@ -428,6 +428,14 @@ instances {
     y: 182.0
     z: 0.2
   }
+  component_properties {
+    id: "freeze"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
   scale3 {
     x: 1.5
     y: 1.5

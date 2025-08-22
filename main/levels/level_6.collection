@@ -1,11 +1,19 @@
-name: "level_5"
+name: "level_6"
 instances {
-  id: "level_5_exit"
+  id: "level_6_exit"
   prototype: "/main/level_exit/level_exit.go"
   position {
-    x: 719.0
-    y: 309.0
+    x: 494.0
+    y: 430.0
     z: 0.2
+  }
+  component_properties {
+    id: "level_exit"
+    properties {
+      id: "win_condition"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
   }
   scale3 {
     x: 2.0
@@ -16,8 +24,8 @@ instances {
   id: "enemy"
   prototype: "/main/enemy/enemy.go"
   position {
-    x: 702.0
-    y: 295.0
+    x: 225.0
+    y: 311.0
     z: 1.0
   }
   component_properties {
@@ -32,6 +40,16 @@ instances {
       value: "false"
       type: PROPERTY_TYPE_BOOLEAN
     }
+    properties {
+      id: "goes_east"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "goes_west"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
   }
   scale3 {
     x: 4.0
@@ -40,16 +58,25 @@ instances {
   }
 }
 instances {
-  id: "track2"
+  id: "key"
+  prototype: "/main/level_exit/key.go"
+  position {
+    x: 233.0
+    y: 389.0
+    z: 1.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+instances {
+  id: "track7"
   prototype: "/main/tracks/track_straight.go"
   position {
-    x: 623.0
-    y: 287.0
+    x: 495.0
+    y: 386.0
     z: 0.1
-  }
-  rotation {
-    z: 0.70710677
-    w: 0.70710677
   }
   scale3 {
     x: 2.0
@@ -58,16 +85,15 @@ instances {
   }
 }
 instances {
-  id: "track3"
-  prototype: "/main/tracks/track_straight.go"
+  id: "track_fork"
+  prototype: "/main/tracks/track_fork.go"
   position {
-    x: 706.0
-    y: 287.0
-    z: 0.1
+    x: 501.0
+    y: 304.0
   }
   rotation {
-    z: 0.70710677
-    w: 0.70710677
+    z: 1.0
+    w: 6.123234E-17
   }
   scale3 {
     x: 2.0
@@ -76,16 +102,12 @@ instances {
   }
 }
 instances {
-  id: "track5"
+  id: "track"
   prototype: "/main/tracks/track_straight.go"
   position {
-    x: 297.0
-    y: 287.0
+    x: 495.0
+    y: 220.0
     z: 0.1
-  }
-  rotation {
-    z: 0.70710677
-    w: 0.70710677
   }
   scale3 {
     x: 2.0
@@ -97,8 +119,8 @@ instances {
   id: "freeze"
   prototype: "/main/powerup_pickups/freeze/freeze.go"
   position {
-    x: 117.0
-    y: 191.0
+    x: 231.0
+    y: 108.0
     z: 0.2
   }
   component_properties {
@@ -118,24 +140,48 @@ collection_instances {
   id: "player_with_minecart"
   collection: "/main/player/player_with_minecart.collection"
   position {
-    x: 183.0
-    y: 292.0
+    x: 752.0
+    y: 315.0
   }
 }
 collection_instances {
   id: "intersection"
   collection: "/main/tracks/segments/intersection.collection"
   position {
-    x: 460.0
-    y: 287.0
+    x: 228.0
+    y: 306.0
   }
 }
 collection_instances {
   id: "bend"
   collection: "/main/tracks/segments/bend.collection"
   position {
-    x: 172.0
-    y: 197.0
+    x: 318.0
+    y: 102.0
+  }
+  rotation {
+    z: 1.0
+    w: 6.123234E-17
+  }
+}
+collection_instances {
+  id: "bend1"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 439.0
+    y: 136.0
+  }
+  rotation {
+    z: 0.70710677
+    w: -0.70710677
+  }
+}
+collection_instances {
+  id: "3_long"
+  collection: "/main/tracks/segments/3_long.collection"
+  position {
+    x: 666.0
+    y: 306.0
   }
   rotation {
     z: 0.70710677

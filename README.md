@@ -11,3 +11,12 @@ If you run into trouble, help is available in [our forum](https://forum.defold.c
 Happy Defolding!
 
 ---
+
+# Adding New Levels (until automated)
+- Copy and paste a level collection
+- Rename the collection ID
+- Rename the level exit game object ID
+- Rename the collection file
+- Update the LEVEL_COUNT in loader.script
+- Add a proxy collection in main.collection
+- Add a new button in level_select.gui, update the ID and text
