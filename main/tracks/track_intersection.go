@@ -1,3 +1,7 @@
+components {
+  id: "track"
+  component: "/main/tracks/track.script"
+}
 embedded_components {
   id: "track_collisionobject"
   type: "collisionobject"

@@ -143,5 +143,29 @@ nodes {
   overridden_fields: 8
   template_node_child: true
 }
+nodes {
+  position {
+    x: 272.0
+    y: 42.0
+  }
+  type: TYPE_TEMPLATE
+  id: "level_7_btn"
+  inherit_alpha: true
+  template: "/main/button/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "level_7_btn/button_box"
+  parent: "level_7_btn"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Level 7"
+  id: "level_7_btn/text"
+  parent: "level_7_btn/button_box"
+  overridden_fields: 8
+  template_node_child: true
+}
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
