@@ -1,0 +1,249 @@
+name: "level_8"
+instances {
+  id: "level_8_exit"
+  prototype: "/main/level_exit/level_exit.go"
+  position {
+    x: 779.0
+    y: 439.0
+    z: 0.2
+  }
+  component_properties {
+    id: "level_exit"
+    properties {
+      id: "win_condition"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+instances {
+  id: "enemy"
+  prototype: "/main/enemy/enemy.go"
+  position {
+    x: 444.0
+    y: 409.0
+    z: 1.0
+  }
+  component_properties {
+    id: "enemy"
+    properties {
+      id: "goes_north"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "goes_south"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "goes_east"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "goes_west"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
+}
+instances {
+  id: "lever"
+  prototype: "/main/tracks/lever.go"
+  position {
+    x: 269.0
+    y: 410.0
+    z: 1.0
+  }
+  component_properties {
+    id: "lever"
+    properties {
+      id: "track_number"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+instances {
+  id: "track3"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 533.0
+    y: 407.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  component_properties {
+    id: "track"
+    properties {
+      id: "disabled"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track4"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 617.0
+    y: 407.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 449.0
+    y: 407.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "freeze"
+  prototype: "/main/powerup_pickups/freeze/freeze.go"
+  position {
+    x: 787.0
+    y: 145.0
+    z: 0.2
+  }
+  component_properties {
+    id: "freeze"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "key"
+  prototype: "/main/level_exit/key.go"
+  position {
+    x: 456.0
+    y: 409.0
+    z: 1.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+collection_instances {
+  id: "player_with_minecart"
+  collection: "/main/player/player_with_minecart.collection"
+  position {
+    x: 610.0
+    y: 422.0
+  }
+}
+collection_instances {
+  id: "3_long"
+  collection: "/main/tracks/segments/3_long.collection"
+  position {
+    x: 524.0
+    y: 137.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+}
+collection_instances {
+  id: "bend"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 698.0
+    y: 352.0
+  }
+}
+collection_instances {
+  id: "bend1"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 323.0
+    y: 317.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+}
+collection_instances {
+  id: "bend2"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 357.0
+    y: 191.0
+  }
+  rotation {
+    z: 1.0
+    w: 6.123234E-17
+  }
+}
+collection_instances {
+  id: "bend3"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 732.0
+    y: 226.0
+  }
+  rotation {
+    z: 0.70710677
+    w: -0.70710677
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"level\"\n"
+  "  component: \"/main/levels/level.gui\"\n"
+  "}\n"
+  ""
+}
