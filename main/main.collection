@@ -66,5 +66,11 @@ embedded_instances {
   "  data: \"collection: \\\"/main/levels/level_8.collection\\\"\\n"
   "\"\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"proxy_level_9\"\n"
+  "  type: \"collectionproxy\"\n"
+  "  data: \"collection: \\\"/main/levels/level_9.collection\\\"\\n"
+  "\"\n"
+  "}\n"
   ""
 }

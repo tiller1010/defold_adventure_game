@@ -2,7 +2,7 @@ script: "/main/level_select.gui_script"
 nodes {
   position {
     x: 272.0
-    y: 430.0
+    y: 585.0
   }
   type: TYPE_TEMPLATE
   id: "level_1_btn"
@@ -26,7 +26,7 @@ nodes {
 nodes {
   position {
     x: 670.0
-    y: 430.0
+    y: 585.0
   }
   type: TYPE_TEMPLATE
   id: "level_2_btn"
@@ -50,7 +50,7 @@ nodes {
 nodes {
   position {
     x: 272.0
-    y: 320.0
+    y: 475.0
   }
   type: TYPE_TEMPLATE
   id: "level_3_btn"
@@ -74,7 +74,7 @@ nodes {
 nodes {
   position {
     x: 670.0
-    y: 320.0
+    y: 475.0
   }
   type: TYPE_TEMPLATE
   id: "level_4_btn"
@@ -98,7 +98,7 @@ nodes {
 nodes {
   position {
     x: 272.0
-    y: 210.0
+    y: 365.0
   }
   type: TYPE_TEMPLATE
   id: "level_5_btn"
@@ -122,7 +122,7 @@ nodes {
 nodes {
   position {
     x: 670.0
-    y: 210.0
+    y: 365.0
   }
   type: TYPE_TEMPLATE
   id: "level_6_btn"
@@ -146,7 +146,7 @@ nodes {
 nodes {
   position {
     x: 272.0
-    y: 100.0
+    y: 255.0
   }
   type: TYPE_TEMPLATE
   id: "level_7_btn"
@@ -170,7 +170,7 @@ nodes {
 nodes {
   position {
     x: 670.0
-    y: 100.0
+    y: 255.0
   }
   type: TYPE_TEMPLATE
   id: "level_8_btn"
@@ -188,6 +188,30 @@ nodes {
   text: "Level 8"
   id: "level_8_btn/text"
   parent: "level_8_btn/button_box"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 272.0
+    y: 145.0
+  }
+  type: TYPE_TEMPLATE
+  id: "level_9_btn"
+  inherit_alpha: true
+  template: "/main/button/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "level_9_btn/button_box"
+  parent: "level_9_btn"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Level 9"
+  id: "level_9_btn/text"
+  parent: "level_9_btn/button_box"
   overridden_fields: 8
   template_node_child: true
 }
