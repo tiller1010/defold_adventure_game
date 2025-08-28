@@ -1,0 +1,245 @@
+name: "level_10"
+instances {
+  id: "level_10_exit"
+  prototype: "/main/level_exit/level_exit.go"
+  position {
+    x: 868.0
+    y: 265.0
+    z: 0.2
+  }
+  component_properties {
+    id: "level_exit"
+    properties {
+      id: "win_condition"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "enemies_count"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+instances {
+  id: "enemy"
+  prototype: "/main/enemy/enemy.go"
+  position {
+    x: 609.0
+    y: 159.0
+    z: 1.0
+  }
+  component_properties {
+    id: "enemy"
+    properties {
+      id: "goes_north"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "goes_south"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
+}
+instances {
+  id: "fire"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 605.0
+    y: 428.0
+    z: 0.2
+  }
+  component_properties {
+    id: "fire"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "track_fork"
+  prototype: "/main/tracks/track_fork.go"
+  position {
+    x: 324.0
+    y: 250.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track_fork1"
+  prototype: "/main/tracks/track_fork.go"
+  position {
+    x: 608.0
+    y: 242.0
+  }
+  rotation {
+    z: 1.0
+    w: 6.123234E-17
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "freeze"
+  prototype: "/main/powerup_pickups/freeze/freeze.go"
+  position {
+    x: 325.0
+    y: 254.0
+    z: 0.2
+  }
+  component_properties {
+    id: "freeze"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "enemy1"
+  prototype: "/main/enemy/enemy.go"
+  position {
+    x: 609.0
+    y: 335.0
+    z: 1.0
+  }
+  component_properties {
+    id: "enemy"
+    properties {
+      id: "goes_north"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "goes_south"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
+}
+collection_instances {
+  id: "player_with_minecart"
+  collection: "/main/player/player_with_minecart.collection"
+  position {
+    x: 79.0
+    y: 248.0
+  }
+}
+collection_instances {
+  id: "3_long"
+  collection: "/main/tracks/segments/3_long.collection"
+  position {
+    x: 159.0
+    y: 250.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+}
+collection_instances {
+  id: "bend"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 420.0
+    y: 125.0
+  }
+  rotation {
+    z: 1.0
+    w: 6.123234E-17
+  }
+}
+collection_instances {
+  id: "bend1"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 546.0
+    y: 159.0
+  }
+  rotation {
+    z: 0.70710677
+    w: -0.70710677
+  }
+}
+collection_instances {
+  id: "bend2"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 386.0
+    y: 334.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+}
+collection_instances {
+  id: "bend3"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 512.0
+    y: 368.0
+  }
+}
+collection_instances {
+  id: "3_long1"
+  collection: "/main/tracks/segments/3_long.collection"
+  position {
+    x: 773.0
+    y: 244.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"level\"\n"
+  "  component: \"/main/levels/level.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "go"
+  data: ""
+  position {
+    x: -10.0
+  }
+}
