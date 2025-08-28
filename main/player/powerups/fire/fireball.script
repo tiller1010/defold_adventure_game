@@ -23,6 +23,5 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash('collision_response') and message.other_group == hash('enemy') then
 		msg.post(message.other_id, 'fire', { damage = 10 })
-		destroy(self)
 	end
 end

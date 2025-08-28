@@ -160,6 +160,7 @@ function on_message(self, message_id, message, sender)
 		msg.post(player_url, "damage", { damage = 25 })
 		
 	elseif message_id == hash('freeze') and self.alive then
+		go.delete(sender)
 		self.frozen = true
 		-- Set blue tint
 		sprite.set_constant('#sprite', 'tint', vmath.vector4(1, 1, 2, .5))
@@ -171,6 +172,7 @@ function on_message(self, message_id, message, sender)
 		end)
 		
 	elseif message_id == hash("fire") and self.alive then
+		go.delete(sender)
 		local new_health = self.health - message.damage
 		if new_health < 0 then
 			new_health = 0

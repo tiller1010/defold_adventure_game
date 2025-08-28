@@ -2,7 +2,7 @@ script: "/main/level_select.gui_script"
 nodes {
   position {
     x: 272.0
-    y: 585.0
+    y: 599.0
   }
   type: TYPE_TEMPLATE
   id: "level_1_btn"
@@ -26,7 +26,7 @@ nodes {
 nodes {
   position {
     x: 670.0
-    y: 585.0
+    y: 599.0
   }
   type: TYPE_TEMPLATE
   id: "level_2_btn"
@@ -50,7 +50,7 @@ nodes {
 nodes {
   position {
     x: 272.0
-    y: 475.0
+    y: 489.0
   }
   type: TYPE_TEMPLATE
   id: "level_3_btn"
@@ -74,7 +74,7 @@ nodes {
 nodes {
   position {
     x: 670.0
-    y: 475.0
+    y: 489.0
   }
   type: TYPE_TEMPLATE
   id: "level_4_btn"
@@ -98,7 +98,7 @@ nodes {
 nodes {
   position {
     x: 272.0
-    y: 365.0
+    y: 379.0
   }
   type: TYPE_TEMPLATE
   id: "level_5_btn"
@@ -122,7 +122,7 @@ nodes {
 nodes {
   position {
     x: 670.0
-    y: 365.0
+    y: 379.0
   }
   type: TYPE_TEMPLATE
   id: "level_6_btn"
@@ -146,7 +146,7 @@ nodes {
 nodes {
   position {
     x: 272.0
-    y: 255.0
+    y: 269.0
   }
   type: TYPE_TEMPLATE
   id: "level_7_btn"
@@ -170,7 +170,7 @@ nodes {
 nodes {
   position {
     x: 670.0
-    y: 255.0
+    y: 269.0
   }
   type: TYPE_TEMPLATE
   id: "level_8_btn"
@@ -194,7 +194,7 @@ nodes {
 nodes {
   position {
     x: 272.0
-    y: 145.0
+    y: 159.0
   }
   type: TYPE_TEMPLATE
   id: "level_9_btn"
@@ -218,7 +218,7 @@ nodes {
 nodes {
   position {
     x: 670.0
-    y: 145.0
+    y: 159.0
   }
   type: TYPE_TEMPLATE
   id: "level_10_btn"
@@ -236,6 +236,30 @@ nodes {
   text: "Level 10"
   id: "level_10_btn/text"
   parent: "level_10_btn/button_box"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 272.0
+    y: 49.0
+  }
+  type: TYPE_TEMPLATE
+  id: "level_11_btn"
+  inherit_alpha: true
+  template: "/main/button/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "level_11_btn/button_box"
+  parent: "level_11_btn"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Level 11"
+  id: "level_11_btn/text"
+  parent: "level_11_btn/button_box"
   overridden_fields: 8
   template_node_child: true
 }
