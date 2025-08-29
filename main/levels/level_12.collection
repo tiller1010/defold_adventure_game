@@ -1,0 +1,441 @@
+name: "level_12"
+instances {
+  id: "level_12_exit"
+  prototype: "/main/level_exit/level_exit.go"
+  position {
+    x: 834.0
+    y: 336.0
+    z: 0.2
+  }
+  component_properties {
+    id: "level_exit"
+    properties {
+      id: "win_condition"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+instances {
+  id: "enemy"
+  prototype: "/main/enemy/enemy.go"
+  position {
+    x: 238.0
+    y: 223.0
+    z: 1.0
+  }
+  component_properties {
+    id: "enemy"
+    properties {
+      id: "goes_north"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "goes_south"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "goes_east"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "goes_west"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 4.0
+    y: 4.0
+    z: 4.0
+  }
+}
+instances {
+  id: "key"
+  prototype: "/main/level_exit/key.go"
+  position {
+    x: 504.0
+    y: 588.0
+    z: 1.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+instances {
+  id: "track7"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 501.0
+    y: 477.0
+    z: 0.1
+  }
+  component_properties {
+    id: "track"
+    properties {
+      id: "disabled"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track_fork"
+  prototype: "/main/tracks/track_fork.go"
+  position {
+    x: 307.0
+    y: 57.0
+  }
+  rotation {
+    z: 0.70710677
+    w: -0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 501.0
+    y: 561.0
+    z: 0.1
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "freeze"
+  prototype: "/main/powerup_pickups/freeze/freeze.go"
+  position {
+    x: 224.0
+    y: 55.0
+    z: 0.2
+  }
+  component_properties {
+    id: "freeze"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "lever"
+  prototype: "/main/tracks/lever.go"
+  position {
+    x: 142.0
+    y: 313.0
+    z: 1.0
+  }
+  component_properties {
+    id: "lever"
+    properties {
+      id: "track_number"
+      value: "7.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+instances {
+  id: "fire"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 328.0
+    y: 411.0
+    z: 0.2
+  }
+  component_properties {
+    id: "fire"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
+instances {
+  id: "track1"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 487.0
+    y: 149.0
+    z: 0.1
+  }
+  rotation {
+    z: -0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track2"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 403.0
+    y: 145.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track3"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 319.0
+    y: 139.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track4"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 391.0
+    y: 51.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track5"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 223.0
+    y: 51.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "lever1"
+  prototype: "/main/tracks/lever.go"
+  position {
+    x: 403.0
+    y: 54.0
+    z: 1.0
+  }
+  component_properties {
+    id: "lever"
+    properties {
+      id: "track_number"
+      value: "11.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+instances {
+  id: "track11"
+  prototype: "/main/tracks/track_fork.go"
+  position {
+    x: 337.0
+    y: 311.0
+  }
+  rotation {
+    z: 1.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "track"
+    properties {
+      id: "disabled"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track6"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 317.0
+    y: 227.0
+    z: 0.1
+  }
+  rotation {
+    z: -0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track8"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 157.0
+    y: 403.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track9"
+  prototype: "/main/tracks/track_straight.go"
+  position {
+    x: 241.0
+    y: 409.0
+    z: 0.1
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+instances {
+  id: "track10"
+  prototype: "/main/tracks/track_turn.go"
+  position {
+    x: 325.0
+    y: 395.0
+    z: 0.1
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 0.2
+  }
+}
+collection_instances {
+  id: "player_with_minecart"
+  collection: "/main/player/player_with_minecart.collection"
+  position {
+    x: 732.0
+    y: 313.0
+  }
+}
+collection_instances {
+  id: "intersection"
+  collection: "/main/tracks/segments/intersection.collection"
+  position {
+    x: 499.0
+    y: 313.0
+  }
+}
+collection_instances {
+  id: "bend1"
+  collection: "/main/tracks/segments/bend.collection"
+  position {
+    x: 233.0
+    y: 277.0
+  }
+  rotation {
+    z: 1.0
+    w: 6.123234E-17
+  }
+}
+collection_instances {
+  id: "3_long"
+  collection: "/main/tracks/segments/3_long.collection"
+  position {
+    x: 746.0
+    y: 313.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"level\"\n"
+  "  component: \"/main/levels/level.gui\"\n"
+  "}\n"
+  ""
+}
