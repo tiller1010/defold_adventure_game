@@ -245,6 +245,9 @@ function on_message(self, message_id, message, sender)
       self.alive = false
       exit_minecart(self)
       sprite.play_flipbook("#sprite", "death_west")
+      timer.delay(1, false, function ()
+        msg.post('/gui#level', 'game_over')
+      end)
     end
 
   elseif message_id == hash('level_completed') then

@@ -166,5 +166,84 @@ nodes {
   id: "level_indicator"
   inherit_alpha: true
 }
+nodes {
+  position {
+    x: 462.0
+    y: 872.0
+  }
+  size {
+    x: 300.0
+    y: 227.0
+  }
+  type: TYPE_BOX
+  id: "game_over_modal"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 21.561205
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Game Over!"
+  font: "default"
+  id: "text1"
+  parent: "game_over_modal"
+  inherit_alpha: true
+}
+nodes {
+  type: TYPE_TEMPLATE
+  id: "retry"
+  parent: "game_over_modal"
+  inherit_alpha: true
+  template: "/main/button/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "retry/button_box"
+  parent: "retry"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Retry"
+  id: "retry/text"
+  parent: "retry/button_box"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    y: -40.0
+  }
+  type: TYPE_TEMPLATE
+  id: "exit"
+  parent: "game_over_modal"
+  inherit_alpha: true
+  template: "/main/button/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "exit/button_box"
+  parent: "exit"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Exit Level"
+  id: "exit/text"
+  parent: "exit/button_box"
+  overridden_fields: 8
+  template_node_child: true
+}
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

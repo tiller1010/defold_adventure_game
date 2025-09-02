@@ -157,7 +157,7 @@ function on_message(self, message_id, message, sender)
 		
 	elseif message.other_group == hash("player") and self.alive and not self.frozen then
 		local player_url = player_helpers.get_player_url(go)
-		msg.post(player_url, "damage", { damage = 25 })
+		msg.post(player_url, "damage", { damage = 50 })
 		
 	elseif message_id == hash('freeze') and self.alive then
 		go.delete(sender)
