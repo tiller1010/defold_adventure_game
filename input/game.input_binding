@@ -22,6 +22,10 @@ key_trigger {
   input: KEY_X
   action: "Interact"
 }
+key_trigger {
+  input: KEY_ESC
+  action: "Menu"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"

@@ -70,6 +70,9 @@ function on_message(self, message_id, message, sender)
 				next_level_exists = self.levels['level_' .. self.current_level + 1] ~= nil
 			}
 		)
+		-- Reset the time_step factor if level was paused
+		msg.post('main:/loader#proxy_level_' .. self.current_level, 'set_time_step', { factor = 1, mode = 1 })
+
 	elseif message_id == hash('proxy_unloaded') and self.restart then
 		self.restart = false
 		msg.post('#', 'load_level', { level = self.current_level })
