@@ -1,17 +1,7 @@
 function init(self)
 	msg.post('.', 'acquire_input_focus')
-	--msg.post('#', 'hide_level_select')
+	msg.post('#', 'hide_level_select')
 	self.active = false
-end
-
-function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
-function update(self, dt)
-	
 end
 
 function on_message(self, message_id, message, sender)

@@ -6,6 +6,10 @@ embedded_instances {
   "  id: \"level_select\"\n"
   "  component: \"/main/level_select.gui\"\n"
   "}\n"
+  "components {\n"
+  "  id: \"start_menu\"\n"
+  "  component: \"/main/start_menu/start_menu.gui\"\n"
+  "}\n"
   ""
   position {
     x: 56.0

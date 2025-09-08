@@ -27,9 +27,6 @@ function init(self)
 	end
 
 	msg.post('/guis#level_select', 'levels_data', { levels_data = self.levels })
-
-	-- MOVE TO START BUTTON WHEN START SCREEN IS ADDED
-	msg.post('/guis#level_select', 'show_level_select')
 end
 
 function on_message(self, message_id, message, sender)

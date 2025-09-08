@@ -1,0 +1,72 @@
+script: "/main/start_menu/start_menu.gui_script"
+fonts {
+  name: "default"
+  font: "/builtins/fonts/default.font"
+}
+nodes {
+  position {
+    x: 478.0
+    y: 463.0
+  }
+  scale {
+    x: 4.0
+    y: 4.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Tricky Tracks"
+  font: "default"
+  id: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 482.0
+    y: 277.0
+  }
+  type: TYPE_TEMPLATE
+  id: "start_button"
+  inherit_alpha: true
+  template: "/main/button/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "start_button/button_box"
+  parent: "start_button"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Start"
+  id: "start_button/text"
+  parent: "start_button/button_box"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 16.0
+    y: 147.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Move with arrow keys\n"
+  "Z to use powerup\n"
+  "X to interact with levers"
+  font: "default"
+  id: "controls"
+  pivot: PIVOT_NW
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
