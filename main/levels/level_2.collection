@@ -39,6 +39,7 @@ collection_instances {
   position {
     x: 253.0
     y: 296.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -59,6 +60,7 @@ collection_instances {
   position {
     x: 664.0
     y: 296.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -71,6 +73,14 @@ embedded_instances {
   data: "components {\n"
   "  id: \"level\"\n"
   "  component: \"/main/levels/level.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"level_map\"\n"
+  "  component: \"/main/levels/tilemaps/level_2.tilemap\"\n"
   "}\n"
   ""
 }
