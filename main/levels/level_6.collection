@@ -5,7 +5,7 @@ instances {
   position {
     x: 494.0
     y: 430.0
-    z: 0.2
+    z: 0.3
   }
   component_properties {
     id: "level_exit"
@@ -90,6 +90,7 @@ instances {
   position {
     x: 501.0
     y: 304.0
+    z: 0.1
   }
   rotation {
     z: 1.0
@@ -150,6 +151,7 @@ collection_instances {
   position {
     x: 228.0
     y: 306.0
+    z: 0.1
   }
 }
 collection_instances {
@@ -158,6 +160,7 @@ collection_instances {
   position {
     x: 318.0
     y: 102.0
+    z: 0.1
   }
   rotation {
     z: 1.0
@@ -170,6 +173,7 @@ collection_instances {
   position {
     x: 439.0
     y: 136.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -182,6 +186,7 @@ collection_instances {
   position {
     x: 666.0
     y: 306.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -194,6 +199,14 @@ embedded_instances {
   data: "components {\n"
   "  id: \"level\"\n"
   "  component: \"/main/levels/level.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"level_map\"\n"
+  "  component: \"/main/levels/tilemaps/level_6.tilemap\"\n"
   "}\n"
   ""
 }
