@@ -5,7 +5,7 @@ instances {
   position {
     x: 735.0
     y: 380.0
-    z: 0.2
+    z: 0.3
   }
   scale3 {
     x: 2.0
@@ -76,6 +76,7 @@ instances {
   position {
     x: 483.0
     y: 361.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
@@ -115,6 +116,7 @@ instances {
   position {
     x: 640.0
     y: 361.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
@@ -210,6 +212,7 @@ collection_instances {
   position {
     x: 254.0
     y: 190.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -222,6 +225,7 @@ collection_instances {
   position {
     x: 208.0
     y: 357.0
+    z: 0.1
   }
 }
 collection_instances {
@@ -230,6 +234,7 @@ collection_instances {
   position {
     x: 364.0
     y: 271.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -242,6 +247,14 @@ embedded_instances {
   data: "components {\n"
   "  id: \"level\"\n"
   "  component: \"/main/levels/level.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"level_map\"\n"
+  "  component: \"/main/levels/tilemaps/level_7.tilemap\"\n"
   "}\n"
   ""
 }
