@@ -245,6 +245,7 @@ collection_instances {
   position {
     x: 460.0
     y: 287.0
+    z: 0.1
   }
 }
 scale_along_z: 0
@@ -262,4 +263,12 @@ embedded_instances {
   position {
     x: -10.0
   }
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"level_map\"\n"
+  "  component: \"/main/levels/tilemaps/level_9.tilemap\"\n"
+  "}\n"
+  ""
 }
