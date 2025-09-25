@@ -2,7 +2,7 @@ go.property('dir', vmath.vector3())
 
 function init(self)
 	self.speed = 350
-	self.life = 1
+	self.life = 1.5
 end
 
 local function destroy(self)

@@ -79,6 +79,7 @@ instances {
   position {
     x: 324.0
     y: 250.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
@@ -92,6 +93,7 @@ instances {
   position {
     x: 608.0
     y: 242.0
+    z: 0.1
   }
   rotation {
     z: 1.0
@@ -172,6 +174,27 @@ instances {
     y: 1.5
   }
 }
+instances {
+  id: "fire1"
+  prototype: "/main/powerup_pickups/fire/fire.go"
+  position {
+    x: 670.0
+    y: 248.0
+    z: 0.2
+  }
+  component_properties {
+    id: "fire"
+    properties {
+      id: "regenerates"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+  }
+}
 collection_instances {
   id: "player_with_minecart"
   collection: "/main/player/player_with_minecart.collection"
@@ -186,6 +209,7 @@ collection_instances {
   position {
     x: 159.0
     y: 250.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -198,6 +222,7 @@ collection_instances {
   position {
     x: 420.0
     y: 125.0
+    z: 0.1
   }
   rotation {
     z: 1.0
@@ -210,6 +235,7 @@ collection_instances {
   position {
     x: 546.0
     y: 159.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -222,6 +248,7 @@ collection_instances {
   position {
     x: 386.0
     y: 334.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -234,6 +261,7 @@ collection_instances {
   position {
     x: 512.0
     y: 368.0
+    z: 0.1
   }
 }
 collection_instances {
@@ -242,6 +270,7 @@ collection_instances {
   position {
     x: 773.0
     y: 244.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -263,4 +292,12 @@ embedded_instances {
   position {
     x: -10.0
   }
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"level_map\"\n"
+  "  component: \"/main/levels/tilemaps/level_10.tilemap\"\n"
+  "}\n"
+  ""
 }
