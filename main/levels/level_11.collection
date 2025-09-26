@@ -5,7 +5,7 @@ instances {
   position {
     x: 265.0
     y: 494.0
-    z: 0.2
+    z: 0.3
   }
   component_properties {
     id: "level_exit"
@@ -79,6 +79,7 @@ instances {
   position {
     x: 518.0
     y: 296.0
+    z: 0.1
   }
   scale3 {
     x: 2.0
@@ -92,6 +93,7 @@ instances {
   position {
     x: 524.0
     y: 463.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -329,6 +331,7 @@ collection_instances {
   position {
     x: 526.0
     y: 130.0
+    z: 0.1
   }
 }
 collection_instances {
@@ -337,6 +340,7 @@ collection_instances {
   position {
     x: 357.0
     y: 471.0
+    z: 0.1
   }
   rotation {
     z: 0.70710677
@@ -349,6 +353,14 @@ embedded_instances {
   data: "components {\n"
   "  id: \"level\"\n"
   "  component: \"/main/levels/level.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"level_map\"\n"
+  "  component: \"/main/levels/tilemaps/level_11.tilemap\"\n"
   "}\n"
   ""
 }
