@@ -17,7 +17,7 @@ nodes {
     y: 100.0
   }
   type: TYPE_TEXT
-  text: "Tricky Tracks"
+  text: "Trouble Tracks"
   font: "default"
   id: "text"
   inherit_alpha: true
