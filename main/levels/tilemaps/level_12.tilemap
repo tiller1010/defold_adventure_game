@@ -1488,12 +1488,12 @@ layers {
   cell {
     x: 8
     y: 9
-    tile: 44
+    tile: 54
   }
   cell {
     x: 9
     y: 9
-    tile: 44
+    tile: 54
   }
   cell {
     x: 10
@@ -1648,14 +1648,12 @@ layers {
   cell {
     x: 8
     y: 10
-    tile: 44
+    tile: 54
   }
   cell {
     x: 9
     y: 10
-    tile: 44
-    h_flip: 1
-    rotate90: 1
+    tile: 54
   }
   cell {
     x: 10
@@ -1826,16 +1824,12 @@ layers {
   cell {
     x: 8
     y: 11
-    tile: 44
-    h_flip: 1
-    rotate90: 1
+    tile: 54
   }
   cell {
     x: 9
     y: 11
-    tile: 44
-    h_flip: 1
-    rotate90: 1
+    tile: 54
   }
   cell {
     x: 10
