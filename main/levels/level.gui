@@ -13,91 +13,6 @@ textures {
 }
 nodes {
   position {
-    x: 20.0
-    y: 598.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  color {
-    y: 0.502
-    z: 0.502
-  }
-  type: TYPE_TEXT
-  text: "Health: 100"
-  font: "default"
-  id: "health"
-  pivot: PIVOT_W
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 20.0
-    y: 560.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  color {
-    x: 0.502
-    y: 0.6
-  }
-  type: TYPE_TEXT
-  text: "Powerup: none"
-  font: "default"
-  id: "powerup"
-  pivot: PIVOT_W
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 129.0
-    y: 600.0
-  }
-  scale {
-    y: 0.211716
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.4
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "health_bar_bg"
-  pivot: PIVOT_W
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 129.0
-    y: 600.0
-  }
-  scale {
-    y: 0.211716
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  color {
-    y: 0.502
-    z: 0.502
-  }
-  type: TYPE_BOX
-  id: "health_bar"
-  pivot: PIVOT_W
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
     x: 462.0
     y: 872.0
   }
@@ -249,6 +164,7 @@ nodes {
   position {
     x: 462.0
     y: 872.0
+    z: 0.1
   }
   size {
     x: 300.0
@@ -350,6 +266,111 @@ nodes {
   pivot: PIVOT_NW
   parent: "pause_modal"
   inherit_alpha: true
+}
+nodes {
+  position {
+    x: 176.0
+    y: 574.0
+  }
+  size {
+    x: 325.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "hud"
+  inherit_alpha: true
+  alpha: 0.8
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -154.0
+    y: 19.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    y: 0.502
+    z: 0.502
+  }
+  type: TYPE_TEXT
+  text: "Health: 100"
+  font: "default"
+  id: "health"
+  pivot: PIVOT_W
+  parent: "hud"
+}
+nodes {
+  position {
+    x: -154.0
+    y: -19.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.502
+    y: 0.6
+  }
+  type: TYPE_TEXT
+  text: "Powerup: none"
+  font: "default"
+  id: "powerup"
+  pivot: PIVOT_W
+  parent: "hud"
+}
+nodes {
+  position {
+    x: -45.0
+    y: 21.0
+  }
+  scale {
+    y: 0.211716
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.4
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "health_bar_bg"
+  pivot: PIVOT_W
+  parent: "hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -45.0
+    y: 21.0
+  }
+  scale {
+    y: 0.211716
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    y: 0.502
+    z: 0.502
+  }
+  type: TYPE_BOX
+  id: "health_bar"
+  pivot: PIVOT_W
+  parent: "hud"
+  size_mode: SIZE_MODE_AUTO
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
