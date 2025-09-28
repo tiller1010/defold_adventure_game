@@ -57,7 +57,7 @@ function on_message(self, message_id, message, sender)
 
 	elseif message_id == hash('level_loaded') then
 		self.level = message.level
-		gui.set_text(gui.get_node('level_indicator'), 'Level ' .. self.level)
+		gui.set_text(gui.get_node('level_indicator_text'), 'Level ' .. self.level)
 		if not message.next_level_exists then
 			local next_btn = gui.get_node('next_level/button_box')
 			gui.delete_node(next_btn)
