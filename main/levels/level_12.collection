@@ -151,7 +151,7 @@ instances {
   position {
     x: 142.0
     y: 313.0
-    z: 1.0
+    z: 0.9
   }
   component_properties {
     id: "lever"
@@ -283,7 +283,7 @@ instances {
   position {
     x: 403.0
     y: 54.0
-    z: 1.0
+    z: 0.9
   }
   component_properties {
     id: "lever"
