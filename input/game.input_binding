@@ -26,6 +26,14 @@ key_trigger {
   input: KEY_ESC
   action: "Menu"
 }
+key_trigger {
+  input: KEY_SPACE
+  action: "Interact"
+}
+key_trigger {
+  input: KEY_ENTER
+  action: "Interact"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"

@@ -68,5 +68,25 @@ nodes {
   pivot: PIVOT_NW
   inherit_alpha: true
 }
+nodes {
+  position {
+    x: 676.0
+    y: 68.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Press X to start"
+  font: "default"
+  id: "start_instructions"
+  pivot: PIVOT_NW
+  inherit_alpha: true
+}
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

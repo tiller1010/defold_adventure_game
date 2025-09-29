@@ -1,6 +1,6 @@
+_G.LEVEL_COUNT = 12
+
 function init(self)
-	_G.LEVEL_COUNT = 12
-	
 	msg.post('.', 'acquire_input_focus')
 
 	self.current_level = 0

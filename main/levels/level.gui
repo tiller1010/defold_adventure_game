@@ -46,6 +46,9 @@ nodes {
   inherit_alpha: true
 }
 nodes {
+  position {
+    y: -14.0
+  }
   type: TYPE_TEMPLATE
   id: "next_level"
   parent: "finished_modal"
@@ -82,7 +85,7 @@ nodes {
 }
 nodes {
   position {
-    y: 21.561205
+    y: 41.561207
   }
   size {
     x: 200.0
@@ -101,6 +104,9 @@ nodes {
   inherit_alpha: true
 }
 nodes {
+  position {
+    y: 11.0
+  }
   type: TYPE_TEMPLATE
   id: "game_over_retry"
   parent: "game_over_modal"
