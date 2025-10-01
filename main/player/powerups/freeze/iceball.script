@@ -3,6 +3,7 @@ go.property('dir', vmath.vector3())
 function init(self)
 	self.speed = 350
 	self.life = 1
+	msg.post('main:/sounds', 'play_iceball')
 end
 
 local function destroy(self)

@@ -25,10 +25,11 @@ function unlock_exit(msg, sprite)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash('collision_response') then
+	if message_id == hash('trigger_response') and message.enter then
 		msg.post('gui#level', 'level_completed')
 		local player_url = player_helpers.get_player_url(go)
 		msg.post(player_url, 'level_completed')
+		msg.post('main:/sounds', 'play_level_completed')
 		msg.post('main:/loader', 'level_unlocked', { level = self.level_number + 1 })
 		
 	elseif message_id == hash('enemy_killed') and self.win_condition == 1 then

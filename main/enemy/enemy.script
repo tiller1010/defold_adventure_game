@@ -195,6 +195,7 @@ function on_message(self, message_id, message, sender)
 		if self.health < 1 then
 			self.alive = false
 			sprite.play_flipbook("#sprite", "explosion_death")
+			msg.post('main:/sounds', 'play_explosion')
 			local level_exit_url = level_exit_helpers.get_level_exit_url(go, _G.LEVEL_COUNT)
 			msg.post(level_exit_url, 'enemy_killed')
 		end

@@ -1,0 +1,26 @@
+function on_message(self, message_id, message, sender)
+	if message_id == hash("play_music") then
+		sound.play("#music")
+
+	elseif message_id == hash('stop_music') then
+		sound.stop('#music')
+
+	elseif message_id == hash("play_explosion") then
+		sound.play("#explosion")
+
+	elseif message_id == hash("play_game_over") then
+		sound.play("#game_over")
+
+	elseif message_id == hash("play_level_completed") then
+		sound.play("#level_completed")
+
+	elseif message_id == hash("play_fireball") then
+		sound.play("#fireball")
+
+	elseif message_id == hash("play_iceball") then
+		sound.play("#iceball")
+
+	elseif message_id == hash("play_powerup_pickup") then
+		sound.play("#powerup_pickup")
+	end
+end
