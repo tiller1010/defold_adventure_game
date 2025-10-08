@@ -179,6 +179,8 @@ function on_message(self, message_id, message, sender)
 		end
 		self.health = new_health
 		
+		msg.post('main:/sounds', 'play_enemy_hit')
+		
 		-- Flash red every other tenth of a second for 1 second
 		for i = 0, 1, .1 do
 			timer.delay(i, false, function ()

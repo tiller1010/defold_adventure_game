@@ -47,3 +47,21 @@ embedded_components {
   "gain: 2.0\n"
   ""
 }
+embedded_components {
+  id: "enemy_hit"
+  type: "sound"
+  data: "sound: \"/assets/sounds/enemy_hit.wav\"\n"
+  ""
+}
+embedded_components {
+  id: "player_hit"
+  type: "sound"
+  data: "sound: \"/assets/sounds/player_hit.wav\"\n"
+  ""
+}
+embedded_components {
+  id: "lever"
+  type: "sound"
+  data: "sound: \"/assets/sounds/lever.wav\"\n"
+  ""
+}
