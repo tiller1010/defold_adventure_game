@@ -121,6 +121,7 @@ function on_input(self, action_id, action)
 		if action.released and self.can_pause then
 			local pause_modal = gui.get_node('pause_modal')
 			self.paused = not self.paused
+			msg.post('main:/sounds', 'play_button_sound')
 			if self.paused then
 				-- Prevent spamming pause
 				self.can_pause = false

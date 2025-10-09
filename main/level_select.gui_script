@@ -49,11 +49,16 @@ function on_input(self, action_id, action)
 				local level_data = self.levels_data['level_' .. i]
 				if level_data.unlocked then
 					if gui.pick_node(node, action.x, action.y) then
+						msg.post('main:/sounds', 'play_button_sound')
 						msg.post('/loader', 'load_level', { level = i })
 						msg.post('#', 'hide_level_select')
 					end
 				end
 			end
+			
+		elseif action_id == hash('Menu') then
+			msg.post('#', 'disable')
+			msg.post('/guis', 'show_start_menu')
 		
 		elseif action_id == hash('Up') and (action.pressed or action.repeated) then
 			gui_controls.navigate(self, -2, gui)
