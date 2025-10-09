@@ -17,6 +17,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash('show_level_select') then
 		msg.post('#', 'enable')
 		self.active = true
+		-- Stop LEVEL music, not menu music
 		msg.post('main:/sounds', 'stop_music')
 
 		gui_controls.navigate(self, 0, gui)
@@ -35,6 +36,7 @@ function on_message(self, message_id, message, sender)
 		msg.post('#', 'disable')
 		self.active = false
 		msg.post('main:/sounds', 'play_music')
+		msg.post('main:/sounds', 'stop_menu_music')
 
 	elseif message_id == hash('levels_data') then
 		self.levels_data = message.levels_data

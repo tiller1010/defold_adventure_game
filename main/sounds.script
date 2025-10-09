@@ -5,6 +5,12 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash('stop_music') then
 		sound.stop('#music')
 
+	elseif message_id == hash("play_menu_music") then
+		sound.play("#menu_music")
+
+	elseif message_id == hash('stop_menu_music') then
+		sound.stop('#menu_music')
+
 	elseif message_id == hash("play_explosion") then
 		sound.play("#explosion")
 

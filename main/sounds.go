@@ -71,3 +71,11 @@ embedded_components {
   data: "sound: \"/assets/sounds/cursor.wav\"\n"
   ""
 }
+embedded_components {
+  id: "menu_music"
+  type: "sound"
+  data: "sound: \"/assets/menu_music.wav\"\n"
+  "looping: 1\n"
+  "gain: 0.5\n"
+  ""
+}
