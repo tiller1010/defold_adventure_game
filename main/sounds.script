@@ -27,6 +27,9 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("play_button_sound") then
 		sound.play("#powerup_pickup")
 
+	elseif message_id == hash("play_cursor_sound") then
+		sound.play("#cursor")
+
 	elseif message_id == hash("play_enemy_hit") then
 		sound.play("#enemy_hit")
 

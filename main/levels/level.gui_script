@@ -152,9 +152,11 @@ function on_input(self, action_id, action)
 	elseif #self.buttons ~= 0  then
 		if action_id == hash('Up') and (action.pressed or action.repeated) then
 			gui_controls.navigate(self, -1, gui)
+			msg.post('main:/sounds', 'play_cursor_sound')
 
 		elseif action_id == hash('Down') and (action.pressed or action.repeated) then
 			gui_controls.navigate(self, 1, gui)
+			msg.post('main:/sounds', 'play_cursor_sound')
 
 		elseif action_id == hash('Interact') and action.pressed then
 			if self.level_completed then

@@ -65,3 +65,9 @@ embedded_components {
   data: "sound: \"/assets/sounds/lever.wav\"\n"
   ""
 }
+embedded_components {
+  id: "cursor"
+  type: "sound"
+  data: "sound: \"/assets/sounds/cursor.wav\"\n"
+  ""
+}
