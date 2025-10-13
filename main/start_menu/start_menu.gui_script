@@ -1,6 +1,7 @@
 function init(self)
 	msg.post('#', 'show_start_menu')
 	self.active = false
+	self.music_started = false
 end
 
 function on_message(self, message_id, message, sender)
@@ -8,7 +9,10 @@ function on_message(self, message_id, message, sender)
 		msg.post('#', 'enable')
 		self.active = true
 		msg.post('main:/sounds', 'stop_music')
-		msg.post('main:/sounds', 'play_menu_music')
+		if not self.music_started then
+			msg.post('main:/sounds', 'play_menu_music')
+			self.music_started = true
+		end
 	elseif message_id == hash('hide_start_menu') then
 		msg.post('#', 'disable')
 		self.active = false

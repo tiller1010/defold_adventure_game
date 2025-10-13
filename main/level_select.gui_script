@@ -22,16 +22,6 @@ function on_message(self, message_id, message, sender)
 
 		gui_controls.navigate(self, 0, gui)
 
-		for n = 1, _G.LEVEL_COUNT do
-			local node = gui.get_node('level_' .. n .. '_btn/button_box')
-			local level_data = self.levels_data['level_' .. n]
-			if level_data.unlocked then
-				gui.set_alpha(node, 1)
-			else
-				gui.set_alpha(node, .5)
-			end
-		end
-
 	elseif message_id == hash('hide_level_select') then
 		msg.post('#', 'disable')
 		self.active = false
