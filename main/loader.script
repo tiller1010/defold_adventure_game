@@ -54,6 +54,7 @@ function on_message(self, message_id, message, sender)
 		self.levels['level_' .. message.level].unlocked = true
 		local save_filename = sys.get_save_file('adventure_game', 'level_save_data')
 		sys.save(save_filename, { levels = self.levels })
+		msg.post('/guis#level_select', 'levels_data', { levels_data = self.levels })
 
 	elseif message_id == hash('proxy_loaded') then
 		msg.post(sender, 'init')

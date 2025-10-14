@@ -33,6 +33,9 @@ end
 return {
 	navigate = function(self, delta, gui)
 		local new_selected_index = self.selected_index + delta
+		local buttons_count = #self.buttons
+		if new_selected_index < 1 then new_selected_index = buttons_count end
+		if new_selected_index > buttons_count then new_selected_index = 1 end
 		
 		local button_unlocked = true
 
@@ -45,9 +48,6 @@ return {
 
 		if button_unlocked then
 			self.selected_index = new_selected_index
-			local buttons_count = #self.buttons
-			if self.selected_index < 1 then self.selected_index = buttons_count end
-			if self.selected_index > buttons_count then self.selected_index = 1 end
 			update_highlight(self, gui)
 		end
 	end
